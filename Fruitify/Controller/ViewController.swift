@@ -11,15 +11,18 @@ class ViewController: UIViewController {
     
     // GH test
     
-    var fruitData = [Fruit]()
+    var fruitData = [FruitModel]()
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var fruitManager = FruitManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        fetchAllFruits(URL: "https://www.fruityvice.com/api/fruit/all") { result in
-            print(result)
+        fruitManager.fetchAllFruits() { result in
+            // print(result)
             self.fruitData = result
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -27,21 +30,7 @@ class ViewController: UIViewController {
         }
     }
 
-    func fetchAllFruits(URL url : String, completion: @escaping ([Fruit]) -> Void){
-        let url = URL(string : url)
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: url!) { data, response, error in
-            if data != nil && error == nil {
-                do{
-                    let parsingData = try JSONDecoder().decode([Fruit].self, from: data!)
-                    completion(parsingData)
-                } catch {
-                    print("parsing error")
-                }
-            }
-        }
-        dataTask.resume()
-    }
+
 }
  
 extension ViewController : UITableViewDataSource {
@@ -52,8 +41,10 @@ extension ViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        
+        let test = "\(fruitData[indexPath.row].colorName) \(fruitData[indexPath.row].family)"
     
-        cell?.textLabel?.text = fruitData[indexPath.row].name
+        cell?.textLabel?.text = test
         return cell!
     }
 }
