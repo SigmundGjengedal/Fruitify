@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // GH test
+    
     var fruitData = [Fruit]()
 
     @IBOutlet weak var tableView: UITableView!
