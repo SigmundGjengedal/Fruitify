@@ -20,13 +20,48 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="65" id="6g5-4i-Oma">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="65"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="105" id="6g5-4i-Oma" customClass="MyTableViewCell" customModule="Fruitify" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6g5-4i-Oma" id="ztK-5E-rUz">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWK-WO-nQF">
+                                                    <rect key="frame" x="65" y="37.5" width="314" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="eIq-0Z-HPL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pbW-D3-vBL">
+                                                    <rect key="frame" x="20" y="35" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="B3b-hS-Y4g"/>
+                                                        <constraint firstAttribute="height" constant="35" id="NjG-VS-4ye"/>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="QbQ-jd-JQ6"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="S4Y-Ru-Qal"/>
+                                                        <constraint firstAttribute="width" constant="35" id="SS0-am-3SX"/>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="35" id="iSh-Ez-CMn"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="oWK-WO-nQF" secondAttribute="trailing" constant="15" id="9kL-N3-xIx"/>
+                                                <constraint firstItem="pbW-D3-vBL" firstAttribute="top" secondItem="ztK-5E-rUz" secondAttribute="topMargin" constant="24" id="DJe-B8-boo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pbW-D3-vBL" secondAttribute="bottom" constant="24" id="EZq-Zo-bMz"/>
+                                                <constraint firstItem="oWK-WO-nQF" firstAttribute="leading" secondItem="pbW-D3-vBL" secondAttribute="trailing" constant="213" id="JpH-Ue-CIj"/>
+                                                <constraint firstItem="pbW-D3-vBL" firstAttribute="leading" secondItem="ztK-5E-rUz" secondAttribute="leadingMargin" id="ZeG-NP-ahk"/>
+                                                <constraint firstItem="oWK-WO-nQF" firstAttribute="leading" secondItem="pbW-D3-vBL" secondAttribute="trailing" constant="10" id="hpy-nq-A8t"/>
+                                                <constraint firstItem="oWK-WO-nQF" firstAttribute="centerY" secondItem="pbW-D3-vBL" secondAttribute="centerY" id="psD-88-tsf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="familyImage" destination="pbW-D3-vBL" id="qUb-pH-jEx"/>
+                                            <outlet property="fruitName" destination="oWK-WO-nQF" id="B6Q-Tb-ISh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

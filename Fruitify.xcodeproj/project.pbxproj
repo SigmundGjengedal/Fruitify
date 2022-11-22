@@ -19,6 +19,7 @@
 		96E96C87292D0B1B007E9048 /* FruitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C86292D0B1B007E9048 /* FruitData.swift */; };
 		96E96C8A292D23E9007E9048 /* FruitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C89292D23E9007E9048 /* FruitManager.swift */; };
 		96E96C8C292D33C5007E9048 /* FruitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C8B292D33C5007E9048 /* FruitModel.swift */; };
+		96E96C90292D6EED007E9048 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C8F292D6EED007E9048 /* MyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		96E96C86292D0B1B007E9048 /* FruitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitData.swift; sourceTree = "<group>"; };
 		96E96C89292D23E9007E9048 /* FruitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitManager.swift; sourceTree = "<group>"; };
 		96E96C8B292D33C5007E9048 /* FruitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitModel.swift; sourceTree = "<group>"; };
+		96E96C8F292D6EED007E9048 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				96E96C58292D06A9007E9048 /* ViewController.swift */,
+				96E96C8F292D6EED007E9048 /* MyTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E96C90292D6EED007E9048 /* MyTableViewCell.swift in Sources */,
 				96E96C59292D06A9007E9048 /* ViewController.swift in Sources */,
 				96E96C55292D06A9007E9048 /* AppDelegate.swift in Sources */,
 				96E96C8A292D23E9007E9048 /* FruitManager.swift in Sources */,
