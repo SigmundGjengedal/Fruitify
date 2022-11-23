@@ -19,7 +19,14 @@ struct FruitModel {
     let fat : Double
     let calories: Int
     let sugar : Double
-    // computed properties Cactaceae"
+    // computed properties
+    var showWarning : Bool {
+        if sugar < 10 {
+            return false
+        } else {
+            return true
+        }
+    }
     var colorName : UIColor {
         switch family {
         case  "Rosaceae":

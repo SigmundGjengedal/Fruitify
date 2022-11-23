@@ -43,9 +43,9 @@ extension ViewController : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
         
-        let test = "\(fruitData[indexPath.row].colorName) \(fruitData[indexPath.row].family)"
-    
-        cell.fruitName.text = fruitData[indexPath.row].family
+        let nameAndId = "\(fruitData[indexPath.row].name)  id: \(fruitData[indexPath.row].id)   "
+        
+        cell.fruitName.text = nameAndId
         cell.familyImage.backgroundColor = fruitData[indexPath.row].colorName
         
         return cell
