@@ -10,11 +10,14 @@ import Foundation
 
 struct FruitManager {
     
-    let allFruitsURL = "https://www.fruityvice.com/api/fruit/all"
+   // "https://www.fruityvice.com/api/fruit/all"
+   // https://www.fruityvice.com/api/fruit/family/:family , https://www.fruityvice.com/api/fruit/family/Rosaceae
+    // https://www.fruityvice.com/api/fruit/genus/:genus , https://www.fruityvice.com/api/fruit/genus/rubus
+    //https://www.fruityvice.com/api/fruit/order/:order, https://www.fruityvice.com/api/fruit/order/Solanales
     
     
-    func fetchAllFruits(completion: @escaping ([FruitModel]) -> Void){
-        let url = URL(string : allFruitsURL)
+    func fetchAllFruits(urlString : String,completion: @escaping ([FruitModel]) -> Void){
+        let url = URL(string : urlString)
         let session = URLSession.shared
         let dataTask = session.dataTask(with: url!) { data, response, error in
             

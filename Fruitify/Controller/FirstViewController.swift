@@ -19,7 +19,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        fruitManager.fetchAllFruits() { result in
+        fruitManager.fetchAllFruits(urlString: "https://www.fruityvice.com/api/fruit/all") { result in
             // print(result)
             self.fruitData = result
             DispatchQueue.main.async {
