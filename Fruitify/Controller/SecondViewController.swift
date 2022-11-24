@@ -36,6 +36,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var sugarLabel: UILabel!
     @IBOutlet weak var sugarLabelValue: UILabel!
     
+    @IBOutlet weak var sugarWarningLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = fruit?.name
@@ -64,6 +67,16 @@ class SecondViewController: UIViewController {
         sugarLabel.text = "Sugar"
         sugarLabelValue.text = fruit?.sugarAsString
         
+        if let hasWarning = fruit?.showWarning{
+            if(hasWarning){
+                sugarWarningLabel.text = "High sugar"
+                sugarWarningLabel.backgroundColor = .red
+            }else {
+                sugarWarningLabel.text = "Low sugar"
+                sugarWarningLabel.backgroundColor = .green
+                
+            }
+        }
         
         // mulig jeg endrer ui.
        
