@@ -50,8 +50,8 @@ struct FruitManager {
                 let fruitM = FruitModel(genus: genus ,name: name, id: id, family: family, order: order,carbohydrates: carbohydrates,protein: protein,fat:fat,calories: calories,sugar: sugar)
                 processedFruit.append(fruitM)
             }
-            
-            return processedFruit.sorted { $0.id < $1.id }
+          
+             return processedFruit.sorted { $0.id < $1.id }
         } catch{
             print(error)
             return nil

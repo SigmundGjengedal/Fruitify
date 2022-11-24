@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96A034E5292FB105007A914D /* FruitBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034E4292FB105007A914D /* FruitBrain.swift */; };
 		96E96C55292D06A9007E9048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C54292D06A9007E9048 /* AppDelegate.swift */; };
 		96E96C57292D06A9007E9048 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C56292D06A9007E9048 /* SceneDelegate.swift */; };
 		96E96C59292D06A9007E9048 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C58292D06A9007E9048 /* FirstViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		96A034E4292FB105007A914D /* FruitBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitBrain.swift; sourceTree = "<group>"; };
 		96E96C51292D06A9007E9048 /* Fruitify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruitify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E96C54292D06A9007E9048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96E96C56292D06A9007E9048 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				96E96C86292D0B1B007E9048 /* FruitData.swift */,
 				96E96C89292D23E9007E9048 /* FruitManager.swift */,
 				96E96C8B292D33C5007E9048 /* FruitModel.swift */,
+				96A034E4292FB105007A914D /* FruitBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			files = (
 				96E96C92292E82C0007E9048 /* SecondViewController.swift in Sources */,
 				96E96C90292D6EED007E9048 /* MyTableViewCell.swift in Sources */,
+				96A034E5292FB105007A914D /* FruitBrain.swift in Sources */,
 				96E96C59292D06A9007E9048 /* FirstViewController.swift in Sources */,
 				96E96C55292D06A9007E9048 /* AppDelegate.swift in Sources */,
 				96E96C8A292D23E9007E9048 /* FruitManager.swift in Sources */,

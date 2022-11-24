@@ -15,15 +15,6 @@ struct Fruit : Codable {
     let family:String
     let order : String
     let nutritions : Nutritions
-    var color : String {
-        switch family {
-        case "Rosaceae":
-            return ".red"
-        default:
-            return ".blue"
-
-        }
-    }
 }
     
 
