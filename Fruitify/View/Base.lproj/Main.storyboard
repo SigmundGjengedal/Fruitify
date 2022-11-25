@@ -30,7 +30,7 @@
         <!--item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="AllFruitsController" id="BYZ-38-t0r" customClass="AllFruitsViewController" customModule="Fruitify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllFruitsController" id="BYZ-38-t0r" customClass="ListFruitsViewController" customModule="Fruitify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,11 +135,11 @@
             </objects>
             <point key="canvasLocation" x="2900" y="90"/>
         </scene>
-        <!--Item-->
+        <!--Filter-->
         <scene sceneID="Yts-nT-8pG">
             <objects>
                 <navigationController id="Awf-V6-gdQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Cn5-AB-QjB"/>
+                    <tabBarItem key="tabBarItem" title="Filter" id="Cn5-AB-QjB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vUQ-Wk-wJc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

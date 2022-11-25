@@ -16,6 +16,7 @@ struct FruitManager {
     //https://www.fruityvice.com/api/fruit/order/:order, https://www.fruityvice.com/api/fruit/order/Solanales
     
     
+    
     func fetchAllFruits(urlString : String,completion: @escaping ([FruitModel]) -> Void){
         let url = URL(string : urlString)
         let session = URLSession.shared

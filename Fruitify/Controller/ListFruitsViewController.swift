@@ -7,15 +7,20 @@
 
 import UIKit
 
-class AllFruitsViewController: UIViewController {
+class ListFruitsViewController: UIViewController {
         
     var fruitData = [FruitModel]()
+    var urlString : String?
+    var selectedFilter : String?
+    var searchValue : String?
     
-    var family : String?
-    var order : String?
-    var genus : String?
-    
-    var urlString = "https://www.fruityvice.com/api/fruit/all"
+    func setUrlString(){
+        if(selectedFilter == nil && searchValue == nil){
+          urlString = "https://www.fruityvice.com/api/fruit/all"
+        }else {
+            urlString = "https://www.fruityvice.com/api/fruit/\(selectedFilter!)/\(searchValue!)"
+        }
+    }
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,8 +29,8 @@ class AllFruitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        fruitManager.fetchAllFruits(urlString: urlString) { result in
+        setUrlString()
+        fruitManager.fetchAllFruits(urlString: urlString!) { result in
             // print(result)
             self.fruitData = result
             DispatchQueue.main.async {
@@ -45,7 +50,7 @@ class AllFruitsViewController: UIViewController {
 }
 
 //for interaksjon med bruker
-extension AllFruitsViewController : UITableViewDelegate {
+extension ListFruitsViewController : UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // pushing navigation
@@ -61,7 +66,7 @@ extension AllFruitsViewController : UITableViewDelegate {
 
 
  
-extension AllFruitsViewController : UITableViewDataSource {
+extension ListFruitsViewController : UITableViewDataSource {
     
     // hvor mange celler den trenger
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

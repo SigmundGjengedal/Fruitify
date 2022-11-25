@@ -12,18 +12,20 @@ class GroupViewController: UIViewController {
     
    var fruitData = [FruitModel]()
    var fruitManager = FruitManager()
-   var urlString = "https://www.fruityvice.com/api/fruit/genus/rubus"
+   // fetcher all data for å bruke den i collectionViewController.
+   var urlString = "https://www.fruityvice.com/api/fruit/all"
     
     
-    
+    // denne skal være på noe ala didSelectRowAt på tableView, men på collectionview
     @IBAction func testButton(_ sender: UIButton) {
         print("fhjdksa")
         // pushing navigation
-        if let secondVc = storyboard?.instantiateViewController(withIdentifier: "AllFruitsController") as? AllFruitsViewController{
+        if let secondVc = storyboard?.instantiateViewController(withIdentifier: "AllFruitsController") as? ListFruitsViewController{
             // setter data
             secondVc.fruitData = fruitData
-            secondVc.genus = "rubus"
-            secondVc.urlString = "https://www.fruityvice.com/api/fruit/genus/rubus"
+            // disse verdiene må komme ved  trykk på ting i UI
+            secondVc.selectedFilter = "genus"
+            secondVc.searchValue = "rubus"
             // navigerer
             self.navigationController?.pushViewController(secondVc, animated: true)
         }
