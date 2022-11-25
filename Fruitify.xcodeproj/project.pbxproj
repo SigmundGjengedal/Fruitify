@@ -10,6 +10,8 @@
 		96A034E5292FB105007A914D /* FruitBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034E4292FB105007A914D /* FruitBrain.swift */; };
 		96A034E92930F32A007A914D /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034E82930F32A007A914D /* GroupViewController.swift */; };
 		96A034EB2930F585007A914D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034EA2930F585007A914D /* LogViewController.swift */; };
+		96A034F22931387D007A914D /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034F02931387D007A914D /* MyCollectionViewCell.swift */; };
+		96A034F32931387D007A914D /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A034F12931387D007A914D /* MyCollectionViewCell.xib */; };
 		96E96C55292D06A9007E9048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C54292D06A9007E9048 /* AppDelegate.swift */; };
 		96E96C57292D06A9007E9048 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C56292D06A9007E9048 /* SceneDelegate.swift */; };
 		96E96C59292D06A9007E9048 /* ListFruitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C58292D06A9007E9048 /* ListFruitsViewController.swift */; };
@@ -47,6 +49,8 @@
 		96A034E4292FB105007A914D /* FruitBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitBrain.swift; sourceTree = "<group>"; };
 		96A034E82930F32A007A914D /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		96A034EA2930F585007A914D /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		96A034F02931387D007A914D /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		96A034F12931387D007A914D /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		96E96C51292D06A9007E9048 /* Fruitify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruitify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E96C54292D06A9007E9048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96E96C56292D06A9007E9048 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				96E96C91292E82C0007E9048 /* FruitsDetailsController.swift */,
 				96A034E82930F32A007A914D /* GroupViewController.swift */,
 				96A034EA2930F585007A914D /* LogViewController.swift */,
+				96A034F02931387D007A914D /* MyCollectionViewCell.swift */,
+				96A034F12931387D007A914D /* MyCollectionViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			files = (
 				96E96C61292D06AB007E9048 /* LaunchScreen.storyboard in Resources */,
 				96E96C5E292D06AB007E9048 /* Assets.xcassets in Resources */,
+				96A034F32931387D007A914D /* MyCollectionViewCell.xib in Resources */,
 				96E96C5C292D06A9007E9048 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +315,7 @@
 			files = (
 				96E96C92292E82C0007E9048 /* FruitsDetailsController.swift in Sources */,
 				96E96C90292D6EED007E9048 /* MyTableViewCell.swift in Sources */,
+				96A034F22931387D007A914D /* MyCollectionViewCell.swift in Sources */,
 				96A034E5292FB105007A914D /* FruitBrain.swift in Sources */,
 				96A034EB2930F585007A914D /* LogViewController.swift in Sources */,
 				96E96C59292D06A9007E9048 /* ListFruitsViewController.swift in Sources */,

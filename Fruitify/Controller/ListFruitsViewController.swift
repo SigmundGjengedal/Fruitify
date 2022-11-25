@@ -8,6 +8,8 @@
 import UIKit
 
 class ListFruitsViewController: UIViewController {
+    
+    // static let fruitData
         
     var fruitData = [FruitModel]()
     var urlString : String?
