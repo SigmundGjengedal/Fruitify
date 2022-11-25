@@ -11,6 +11,10 @@ class AllFruitsViewController: UIViewController {
         
     var fruitData = [FruitModel]()
     
+    var family : String?
+    var order : String?
+    var genus : String?
+    
     var urlString = "https://www.fruityvice.com/api/fruit/all"
 
     @IBOutlet weak var tableView: UITableView!
@@ -29,10 +33,11 @@ class AllFruitsViewController: UIViewController {
             }
         }
     }
+    
     // prøve å få med data ved trykk på group
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let tabBarController = segue.destination  as? TabBarController {
-            tabBarController.fruitData = fruitData
+        if let groupController = segue.destination  as? GroupViewController {
+            groupController.fruitData = fruitData
         }
     }
 
@@ -49,7 +54,7 @@ extension AllFruitsViewController : UITableViewDelegate {
             secondVc.fruit = fruitData[indexPath.row]
             // navigerer
             self.navigationController?.pushViewController(secondVc, animated: true)
-        }        
+        }
     }
 }
 

@@ -8,20 +8,37 @@
 import UIKit
 
 class GroupViewController: UIViewController {
+ 
     
-    var fruitData = [FruitModel]()
-    var fruitManager = FruitManager()
-    var urlString = "https://www.fruityvice.com/api/fruit/genus/rubus"
-
+   var fruitData = [FruitModel]()
+   var fruitManager = FruitManager()
+   var urlString = "https://www.fruityvice.com/api/fruit/genus/rubus"
+    
+    
+    
+    @IBAction func testButton(_ sender: UIButton) {
+        print("fhjdksa")
+        // pushing navigation
+        if let secondVc = storyboard?.instantiateViewController(withIdentifier: "AllFruitsController") as? AllFruitsViewController{
+            // setter data
+            secondVc.fruitData = fruitData
+            secondVc.genus = "rubus"
+            secondVc.urlString = "https://www.fruityvice.com/api/fruit/genus/rubus"
+            // navigerer
+            self.navigationController?.pushViewController(secondVc, animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor =  .red
+        print(fruitData)
         // Do any additional setup after loading the view.
-        fruitManager.fetchAllFruits(urlString: urlString) { result in
-            // print(result)
-            self.fruitData = result
-            print(self.fruitData)
-        }
+         
+         fruitManager.fetchAllFruits(urlString: urlString) { result in
+             // print(result)
+             self.fruitData = result
+             print(self.fruitData)
+         }
     }
     
 
@@ -32,6 +49,7 @@ class GroupViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+     
     }
     */
 

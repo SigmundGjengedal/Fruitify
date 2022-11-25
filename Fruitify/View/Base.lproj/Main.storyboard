@@ -19,8 +19,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="kKR-99-44b" kind="relationship" relationship="viewControllers" id="EJs-Pl-yQr"/>
-                        <segue destination="XSg-Qb-wiI" kind="relationship" relationship="viewControllers" id="TFs-q0-nOs"/>
                         <segue destination="8GJ-fM-XfD" kind="relationship" relationship="viewControllers" id="vdD-oc-g1m"/>
+                        <segue destination="Awf-V6-gdQ" kind="relationship" relationship="viewControllers" id="i87-KQ-jTg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8D-MZ-3sf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -30,7 +30,7 @@
         <!--item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AllFruitsViewController" customModule="Fruitify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllFruitsController" id="BYZ-38-t0r" customClass="AllFruitsViewController" customModule="Fruitify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,12 +98,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="71.651785714285708"/>
+            <point key="canvasLocation" x="1041" y="72"/>
         </scene>
         <!--GROUPED-->
         <scene sceneID="OpU-cR-Fuw">
             <objects>
-                <viewController id="XSg-Qb-wiI" customClass="GroupViewController" customModule="Fruitify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="group" id="XSg-Qb-wiI" customClass="GroupViewController" customModule="Fruitify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dsK-HZ-7uC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,15 +115,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA6-WI-Z28">
+                                <rect key="frame" x="130" y="337" width="126" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="testButton:" destination="XSg-Qb-wiI" eventType="touchUpInside" id="alI-bJ-c6T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IIw-zl-yyg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="GROUPED" id="KJV-Px-ydR"/>
+                    <navigationItem key="navigationItem" id="jgR-Zq-CNv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2c-Z4-B6n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001.449275362319" y="61.607142857142854"/>
+            <point key="canvasLocation" x="2900" y="90"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Yts-nT-8pG">
+            <objects>
+                <navigationController id="Awf-V6-gdQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Cn5-AB-QjB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vUQ-Wk-wJc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XSg-Qb-wiI" kind="relationship" relationship="rootViewController" id="hgy-1h-MmE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDh-Ia-bZ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965" y="90"/>
         </scene>
         <!--LOG-->
         <scene sceneID="cHj-AH-j2n">
@@ -148,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fy3-Yv-ELJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2862.3188405797105" y="66.964285714285708"/>
+            <point key="canvasLocation" x="3738" y="90"/>
         </scene>
         <!--Fruits Details Controller-->
         <scene sceneID="O7c-7J-igz">
