@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class FruitsDetailsController: UIViewController {
     var fruit : FruitModel?
     
     @IBOutlet weak var familyLabel: UILabel!

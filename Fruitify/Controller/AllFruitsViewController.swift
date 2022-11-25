@@ -7,9 +7,11 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class AllFruitsViewController: UIViewController {
         
     var fruitData = [FruitModel]()
+    
+    var urlString = "https://www.fruityvice.com/api/fruit/all"
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,7 +21,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        fruitManager.fetchAllFruits(urlString: "https://www.fruityvice.com/api/fruit/all") { result in
+        fruitManager.fetchAllFruits(urlString: urlString) { result in
             // print(result)
             self.fruitData = result
             DispatchQueue.main.async {
@@ -27,16 +29,22 @@ class FirstViewController: UIViewController {
             }
         }
     }
+    // prøve å få med data ved trykk på group
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let tabBarController = segue.destination  as? TabBarController {
+            tabBarController.fruitData = fruitData
+        }
+    }
 
 
 }
 
 //for interaksjon med bruker
-extension FirstViewController : UITableViewDelegate {
+extension AllFruitsViewController : UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // pushing navigation
-        if let secondVc = storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController{
+        if let secondVc = storyboard?.instantiateViewController(withIdentifier: "FruitsDetailsController") as? FruitsDetailsController{
             // setter data
             secondVc.fruit = fruitData[indexPath.row]
             // navigerer
@@ -45,8 +53,10 @@ extension FirstViewController : UITableViewDelegate {
     }
 }
 
+
+
  
-extension FirstViewController : UITableViewDataSource {
+extension AllFruitsViewController : UITableViewDataSource {
     
     // hvor mange celler den trenger
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
