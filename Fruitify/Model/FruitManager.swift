@@ -15,6 +15,7 @@ struct FruitManager {
     // https://www.fruityvice.com/api/fruit/genus/:genus , https://www.fruityvice.com/api/fruit/genus/rubus
     //https://www.fruityvice.com/api/fruit/order/:order, https://www.fruityvice.com/api/fruit/order/Solanales
     
+    static var globalFruits = [FruitModel]()
     
     
     func fetchAllFruits(urlString : String,completion: @escaping ([FruitModel]) -> Void){
@@ -54,7 +55,7 @@ struct FruitManager {
                 let fruitM = FruitModel(genus: genus ,name: name, id: id, family: family, order: order,carbohydrates: carbohydrates,protein: protein,fat:fat,calories: calories,sugar: sugar)
                 processedFruit.append(fruitM)
             }
-          
+             FruitManager.globalFruits = processedFruit.sorted { $0.id < $1.id }
              return processedFruit.sorted { $0.id < $1.id }
         } catch{
             print(error)

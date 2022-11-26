@@ -41,14 +41,6 @@ class ListFruitsViewController: UIViewController {
         }
     }
     
-    // prøve å få med data ved trykk på group
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let groupController = segue.destination  as? GroupViewController {
-            groupController.fruitData = fruitData
-        }
-    }
-
-
 }
 
 //for interaksjon med bruker

@@ -13,28 +13,56 @@ class GroupViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     
-   var fruitData = [FruitModel]()
+    // 1: var fruitData = [FruitModel]()
    var fruitManager = FruitManager()
    // fetcher all data for å bruke den i collectionViewController.
    var urlString = "https://www.fruityvice.com/api/fruit/all"
+    
+    
+    var familyArray : [String] = []
+    var genusArray : [String] = []
+    var orderArray : [String] = []
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // som flexbox
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 120, height: 120)
+        layout.itemSize = CGSize(width: 100, height: 100)
         collectionView.collectionViewLayout = layout
         
         collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: "MyCollectionViewCell")
         collectionView.delegate = self
         collectionView.dataSource = self
-         
-         fruitManager.fetchAllFruits(urlString: urlString) { result in
+        
+        // bygger unike set for sortering
+        var familySet = Set<String>()
+        for fruit in FruitManager.globalFruits {
+            familySet.insert(fruit.family)
+        }
+        familyArray = Array(familySet)
+      
+        var genusSet = Set<String>()
+        for fruit in FruitManager.globalFruits {
+            genusSet.insert(fruit.genus)
+        }
+        genusArray = Array(genusSet)
+        
+        
+        var orderSet = Set<String>()
+        for fruit in FruitManager.globalFruits {
+            orderSet.insert(fruit.order)
+        }
+        orderArray = Array(orderSet)
+        
+        // fetch før global var
+        /* 1: fruitManager.fetchAllFruits(urlString: urlString) { result in
              // print(result)
              self.fruitData = result
-             print(self.fruitData)
-         }
+         
+         }*/
+
+   
     }
     
 }
@@ -51,8 +79,7 @@ extension GroupViewController : UICollectionViewDelegate{
         // setter opp destinasjon ved klikk:
         if let secondVc = storyboard?.instantiateViewController(withIdentifier: "AllFruitsController") as? ListFruitsViewController{
             
-            // trenger jeg denne da?!?!
-            secondVc.fruitData = fruitData
+          
             // setter filter for fam/order/genus
             switch indexPath.section {
             case 0:
@@ -80,10 +107,14 @@ extension GroupViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         // sjekk på section og return count. Må ha data.
-       /* if section == 0 {
-            return jfdklas.count
-        }*/
-        return 3
+        if section == 0 {
+            return familyArray.count
+        }
+        if section == 1 {
+                return orderArray.count
+            }
+        return genusArray.count
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,13 +122,13 @@ extension GroupViewController : UICollectionViewDataSource{
         
         // her må riktig data
         if(indexPath.section ==  0  ){
-            cell.cellLabel.text = "Lauraceae"
+            cell.cellLabel.text = familyArray[indexPath.row]
         }
         if(indexPath.section ==  1  ){
-            cell.cellLabel.text = "Laurales"
+            cell.cellLabel.text = orderArray[indexPath.row]
         }
         if(indexPath.section ==  2  ){
-            cell.cellLabel.text = "Persea"
+            cell.cellLabel.text = genusArray[indexPath.row]
         }
         
         return cell
