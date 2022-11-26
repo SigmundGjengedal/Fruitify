@@ -31,7 +31,14 @@ class GroupViewController: UIViewController {
         layout.itemSize = CGSize(width: 100, height: 100)
         collectionView.collectionViewLayout = layout
         
+        // henter custom layouts
+        // celle
         collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: "MyCollectionViewCell")
+        // header
+        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
+        
+    
+        // tar på delegate ansvar
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -74,12 +81,9 @@ extension GroupViewController : UICollectionViewDelegate{
         print(indexPath.section)
         let cell : MyCollectionViewCell = collectionView.cellForItem(at: indexPath) as! MyCollectionViewCell
         
-        print(cell.cellLabel!.text!)
-        
         // setter opp destinasjon ved klikk:
         if let secondVc = storyboard?.instantiateViewController(withIdentifier: "AllFruitsController") as? ListFruitsViewController{
             
-          
             // setter filter for fam/order/genus
             switch indexPath.section {
             case 0:
@@ -120,6 +124,10 @@ extension GroupViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as! MyCollectionViewCell
         
+        cell.cellLabel.layer.masksToBounds = true
+        cell.cellLabel.layer.cornerRadius = 5
+        cell.cellLabel.layer.borderWidth = 1
+      
         // her må riktig data
         if(indexPath.section ==  0  ){
             cell.cellLabel.text = familyArray[indexPath.row]
@@ -138,6 +146,27 @@ extension GroupViewController : UICollectionViewDataSource{
     // setter antall sections
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
+    }
+    
+    // header
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
+        header.configure()
+        
+        if(indexPath.section ==  0  ){
+            header.label.text = "Sorted By Family"
+        }
+        if(indexPath.section ==  1  ){
+            header.label.text = "Sorted By Order"
+        }
+        if(indexPath.section ==  2  ){
+            header.label.text = "Sorted By Genus"
+        }
+        
+        return header
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 100)
     }
     
 }

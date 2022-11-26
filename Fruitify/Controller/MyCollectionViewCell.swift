@@ -8,7 +8,7 @@
 import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
-    // tag?
+
     @IBOutlet var cellLabel : UILabel!
     
 
@@ -17,9 +17,6 @@ class MyCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    /*public func configure(with label: UILabel){
-        cellLabel = label
-    }*/
     
     static func nib() -> UINib {
         return UINib(nibName: "MyCollectionViewCell", bundle: nil)
