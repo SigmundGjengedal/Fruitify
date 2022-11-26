@@ -71,10 +71,10 @@ extension ListFruitsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // allokerer minne ved å gjennbruke celler.
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
-        let nameAndId = "\(fruitData[indexPath.row].name)  id: \(fruitData[indexPath.row].id)   "
+        let name = "\(fruitData[indexPath.row].name)"
         
         // props i MyTableViewCell
-        cell.fruitName.text = nameAndId
+        cell.fruitName.text = name
         cell.familyImage.backgroundColor = fruitData[indexPath.row].colorName
         
         return cell

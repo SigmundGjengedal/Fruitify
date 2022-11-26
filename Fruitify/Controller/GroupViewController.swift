@@ -89,9 +89,10 @@ extension GroupViewController : UICollectionViewDelegate{
             case 0:
                 secondVc.selectedFilter = "family"
             case 1:
-                secondVc.selectedFilter = "order"
+                secondVc.selectedFilter = "genus"
             case 2:
-            secondVc.selectedFilter = "genus"
+            secondVc.selectedFilter = "order"
+            // mulig default må endres
             default:
                 secondVc.selectedFilter = "all"
             }
@@ -115,9 +116,9 @@ extension GroupViewController : UICollectionViewDataSource{
             return familyArray.count
         }
         if section == 1 {
-                return orderArray.count
+                return genusArray.count
             }
-        return genusArray.count
+        return orderArray.count
        
     }
     
@@ -133,10 +134,10 @@ extension GroupViewController : UICollectionViewDataSource{
             cell.cellLabel.text = familyArray[indexPath.row]
         }
         if(indexPath.section ==  1  ){
-            cell.cellLabel.text = orderArray[indexPath.row]
+            cell.cellLabel.text = genusArray[indexPath.row]
         }
         if(indexPath.section ==  2  ){
-            cell.cellLabel.text = genusArray[indexPath.row]
+            cell.cellLabel.text = orderArray[indexPath.row]
         }
         
         return cell
@@ -157,10 +158,10 @@ extension GroupViewController : UICollectionViewDataSource{
             header.label.text = "Sorted By Family"
         }
         if(indexPath.section ==  1  ){
-            header.label.text = "Sorted By Order"
+            header.label.text = "Sorted By Genus"
         }
         if(indexPath.section ==  2  ){
-            header.label.text = "Sorted By Genus"
+            header.label.text = "Sorted By Order"
         }
         
         return header
