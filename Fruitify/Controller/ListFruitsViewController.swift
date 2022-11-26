@@ -30,6 +30,7 @@ class ListFruitsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "All Fruits"
         // Do any additional setup after loading the view.
         setUrlString()
         fruitManager.fetchAllFruits(urlString: urlString!) { result in

@@ -25,7 +25,7 @@ class GroupViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Sorted Fruits"
         // som flexbox
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 100, height: 100)

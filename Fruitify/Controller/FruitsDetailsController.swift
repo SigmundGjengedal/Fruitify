@@ -80,6 +80,11 @@ class FruitsDetailsController: UIViewController {
         
         // mulig jeg endrer ui.
        
+    }// end of didLoad
+    
+    
+    @IBAction func eatPressed(_ sender: UIButton) {
+        print("ttest")
     }
     
 }

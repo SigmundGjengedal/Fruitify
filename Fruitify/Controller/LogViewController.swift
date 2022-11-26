@@ -11,6 +11,7 @@ class LogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Fruit Log"
         view.backgroundColor = .yellow
         // Do any additional setup after loading the view.
     }
