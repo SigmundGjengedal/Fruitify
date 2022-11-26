@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9664CAD42932453C001D9B36 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */; };
+		9664CAD6293280B7001D9B36 /* EatFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664CAD5293280B7001D9B36 /* EatFruitViewController.swift */; };
 		96A034E5292FB105007A914D /* FruitBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034E4292FB105007A914D /* FruitBrain.swift */; };
 		96A034E92930F32A007A914D /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034E82930F32A007A914D /* GroupViewController.swift */; };
 		96A034EB2930F585007A914D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034EA2930F585007A914D /* LogViewController.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		9664CAD5293280B7001D9B36 /* EatFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatFruitViewController.swift; sourceTree = "<group>"; };
 		96A034E4292FB105007A914D /* FruitBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitBrain.swift; sourceTree = "<group>"; };
 		96A034E82930F32A007A914D /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		96A034EA2930F585007A914D /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				96A034F02931387D007A914D /* MyCollectionViewCell.swift */,
 				96A034F12931387D007A914D /* MyCollectionViewCell.xib */,
 				9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */,
+				9664CAD5293280B7001D9B36 /* EatFruitViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				9664CAD42932453C001D9B36 /* HeaderCollectionReusableView.swift in Sources */,
 				96E96C59292D06A9007E9048 /* ListFruitsViewController.swift in Sources */,
 				96A034E92930F32A007A914D /* GroupViewController.swift in Sources */,
+				9664CAD6293280B7001D9B36 /* EatFruitViewController.swift in Sources */,
 				96E96C55292D06A9007E9048 /* AppDelegate.swift in Sources */,
 				96E96C8A292D23E9007E9048 /* FruitManager.swift in Sources */,
 				96E96C87292D0B1B007E9048 /* FruitData.swift in Sources */,

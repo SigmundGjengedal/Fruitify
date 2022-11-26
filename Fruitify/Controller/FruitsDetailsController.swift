@@ -84,7 +84,13 @@ class FruitsDetailsController: UIViewController {
     
     
     @IBAction func eatPressed(_ sender: UIButton) {
-        print("ttest")
+        if let eatVC = storyboard?.instantiateViewController(withIdentifier: "EatFruitViewController") as? EatFruitViewController{
+            // setter data
+            eatVC .fruit = fruit
+            // navigerer
+           // present(eatVC,animated: true)
+            self.navigationController?.pushViewController(eatVC, animated: true)
     }
     
+}
 }
