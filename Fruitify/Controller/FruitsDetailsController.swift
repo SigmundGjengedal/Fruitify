@@ -85,8 +85,16 @@ class FruitsDetailsController: UIViewController {
     
     @IBAction func eatPressed(_ sender: UIButton) {
         if let eatVC = storyboard?.instantiateViewController(withIdentifier: "EatFruitViewController") as? EatFruitViewController{
-            // setter data
-            eatVC .fruit = fruit
+            
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            let dateAsString = dateFormatter.string(from: date)
+            
+            // setter ddato data
+            eatVC.fruit = fruit
+            eatVC.date = dateAsString
+            eatVC.weekDay = dateFormatter.weekdaySymbols[Calendar.current.component(.weekday, from: date ) - 1]
             // navigerer
            // present(eatVC,animated: true)
             self.navigationController?.pushViewController(eatVC, animated: true)
