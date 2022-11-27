@@ -17,6 +17,7 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var logTableView: UITableView!
     let dateFormatter = DateFormatter()
+  
     
     private var fruits = [FruitLItem]()
     var dateSet : [String] = []
@@ -52,6 +53,7 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath)
         
         var fruitsOnDate = [FruitLItem]()
+        // looper gjennom alle fruits, og sjekker om datoen er lik dato av nåverende section. 
         for fruit in fruits {
             let stringDate = dateFormatter.string(from: fruit.date!)
             if(stringDate == dateSet[indexPath.section]){
@@ -61,11 +63,16 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         cell.textLabel?.text = fruitsOnDate[indexPath.row].name
         return cell
     }
-    
- 
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dateSet[section]
+        
+        let date = dateFormatter.date(from: dateSet[section])
+        let weekDay = dateFormatter.weekdaySymbols[Calendar.current.component(.weekday, from: date!) - 1]
+        return "\(weekDay) \(dateSet[section])"
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "footer"
     }
     
     
@@ -83,6 +90,7 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             for fruit in fruits {
+                print("\(fruit.name!) \(fruit.date!)")
                let stringDate = dateFormatter.string(from: fruit.date!)
                 if(!dateSet.contains(stringDate)){
                     dateSet.append(stringDate)
