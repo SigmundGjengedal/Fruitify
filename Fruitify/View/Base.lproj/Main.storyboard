@@ -174,22 +174,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="opg 4 log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-kn-AEZ">
-                                <rect key="frame" x="138" y="436" width="139" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2g0-wZ-dsE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logCell" id="yHj-f9-hRb">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yHj-f9-hRb" id="6lF-TM-rx4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cHH-Yz-lN3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cHH-Yz-lN3" firstAttribute="bottom" secondItem="2g0-wZ-dsE" secondAttribute="bottom" id="5rq-pv-M8r"/>
+                            <constraint firstItem="2g0-wZ-dsE" firstAttribute="top" secondItem="cHH-Yz-lN3" secondAttribute="top" id="BRn-Z6-Lth"/>
+                            <constraint firstItem="cHH-Yz-lN3" firstAttribute="trailing" secondItem="2g0-wZ-dsE" secondAttribute="trailing" id="BYK-Cx-2tx"/>
+                            <constraint firstItem="2g0-wZ-dsE" firstAttribute="leading" secondItem="cHH-Yz-lN3" secondAttribute="leading" id="vmA-qe-MgP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="LOG" image="calendar" catalog="system" id="aIn-JO-LSG"/>
+                    <connections>
+                        <outlet property="logTableView" destination="2g0-wZ-dsE" id="HUh-Lj-LOb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fy3-Yv-ELJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3738" y="90"/>
+            <point key="canvasLocation" x="3737.68115942029" y="89.732142857142847"/>
         </scene>
         <!--Fruits Details Controller-->
         <scene sceneID="O7c-7J-igz">

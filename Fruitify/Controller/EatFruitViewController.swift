@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class EatFruitViewController: UIViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var fruit : FruitModel?
     var date : Date?
@@ -24,8 +27,8 @@ class EatFruitViewController: UIViewController {
         if let safeDate = date {
             print(safeDate)
         }
-        print(fruit!)
-        print(date!)
+      
+        createItem()
       
     }
     
@@ -37,5 +40,29 @@ class EatFruitViewController: UIViewController {
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         self.date = sender.date
     
+    }
+}
+
+extension EatFruitViewController {
+    
+    func createItem(){
+        
+        if let hasFruit = fruit {
+            let newDbItem = FruitLItem(context: context)
+            newDbItem.name = hasFruit.name
+            newDbItem.date = date
+            newDbItem.calories = Int32(hasFruit.calories)
+            newDbItem.carbohydrates = hasFruit.carbohydrates
+            newDbItem.fat = hasFruit.fat
+            newDbItem.protein = hasFruit.protein
+            newDbItem.sugar = hasFruit.sugar
+        }
+        
+        do {
+          try context.save()
+        }
+        catch {
+            print(error)
+        }
     }
 }

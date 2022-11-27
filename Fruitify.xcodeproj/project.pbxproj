@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961FEAB92933A04700C623FA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961FEAB72933A04700C623FA /* DataModel.xcdatamodeld */; };
+		961FEABC2933AA9600C623FA /* FruitLItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961FEABA2933AA9600C623FA /* FruitLItem+CoreDataClass.swift */; };
+		961FEABD2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961FEABB2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift */; };
 		9664CAD42932453C001D9B36 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */; };
 		9664CAD6293280B7001D9B36 /* EatFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664CAD5293280B7001D9B36 /* EatFruitViewController.swift */; };
 		96A034E5292FB105007A914D /* FruitBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034E4292FB105007A914D /* FruitBrain.swift */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		961FEAB82933A04700C623FA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		961FEABA2933AA9600C623FA /* FruitLItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitLItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		961FEABB2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitLItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		9664CAD5293280B7001D9B36 /* EatFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatFruitViewController.swift; sourceTree = "<group>"; };
 		96A034E4292FB105007A914D /* FruitBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitBrain.swift; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 		96E96C48292D06A9007E9048 = {
 			isa = PBXGroup;
 			children = (
+				961FEABA2933AA9600C623FA /* FruitLItem+CoreDataClass.swift */,
+				961FEABB2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift */,
 				96E96C53292D06A9007E9048 /* Fruitify */,
 				96E96C6A292D06AB007E9048 /* FruitifyTests */,
 				96E96C74292D06AB007E9048 /* FruitifyUITests */,
@@ -131,6 +139,7 @@
 				96E96C5D292D06AB007E9048 /* Assets.xcassets */,
 				96E96C5F292D06AB007E9048 /* LaunchScreen.storyboard */,
 				96E96C62292D06AB007E9048 /* Info.plist */,
+				961FEAB72933A04700C623FA /* DataModel.xcdatamodeld */,
 			);
 			path = Fruitify;
 			sourceTree = "<group>";
@@ -321,15 +330,18 @@
 			files = (
 				96E96C92292E82C0007E9048 /* FruitsDetailsController.swift in Sources */,
 				96E96C90292D6EED007E9048 /* MyTableViewCell.swift in Sources */,
+				961FEABC2933AA9600C623FA /* FruitLItem+CoreDataClass.swift in Sources */,
 				96A034F22931387D007A914D /* MyCollectionViewCell.swift in Sources */,
 				96A034E5292FB105007A914D /* FruitBrain.swift in Sources */,
 				96A034EB2930F585007A914D /* LogViewController.swift in Sources */,
 				9664CAD42932453C001D9B36 /* HeaderCollectionReusableView.swift in Sources */,
+				961FEAB92933A04700C623FA /* DataModel.xcdatamodeld in Sources */,
 				96E96C59292D06A9007E9048 /* ListFruitsViewController.swift in Sources */,
 				96A034E92930F32A007A914D /* GroupViewController.swift in Sources */,
 				9664CAD6293280B7001D9B36 /* EatFruitViewController.swift in Sources */,
 				96E96C55292D06A9007E9048 /* AppDelegate.swift in Sources */,
 				96E96C8A292D23E9007E9048 /* FruitManager.swift in Sources */,
+				961FEABD2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift in Sources */,
 				96E96C87292D0B1B007E9048 /* FruitData.swift in Sources */,
 				96E96C8C292D33C5007E9048 /* FruitModel.swift in Sources */,
 				96E96C57292D06A9007E9048 /* SceneDelegate.swift in Sources */,
@@ -668,6 +680,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		961FEAB72933A04700C623FA /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				961FEAB82933A04700C623FA /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 961FEAB82933A04700C623FA /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 96E96C49292D06A9007E9048 /* Project object */;
 }
