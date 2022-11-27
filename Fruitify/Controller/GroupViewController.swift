@@ -28,7 +28,7 @@ class GroupViewController: UIViewController {
         title = "Sorted Fruits"
         // som flexbox
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 100, height: 100)
+       // layout.itemSize = CGSize(width: 80, height: 100)
         collectionView.collectionViewLayout = layout
         
         // henter custom layouts
@@ -175,23 +175,8 @@ extension GroupViewController : UICollectionViewDataSource{
 // custom design
 extension GroupViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 120)
+        return CGSize(width: collectionView.frame.width / 2.1 , height:80)
     }
 }
 
 
-// denne skal være på noe ala didSelectRowAt på tableView, men på collectionview
-/*
-@IBAction func testButton(_ sender: UIButton) {
-    print("fhjdksa")
-    // pushing navigation
-    if let secondVc = storyboard?.instantiateViewController(withIdentifier: "AllFruitsController") as? ListFruitsViewController{
-        // setter data
-        secondVc.fruitData = fruitData
-        // disse verdiene må komme ved  trykk på ting i UI
-        secondVc.selectedFilter = "genus"
-        secondVc.searchValue = "rubus"
-        // navigerer
-        self.navigationController?.pushViewController(secondVc, animated: true)
-    }
-}*/
