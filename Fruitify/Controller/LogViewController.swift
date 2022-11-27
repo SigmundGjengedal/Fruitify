@@ -53,7 +53,7 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "logCell", for: indexPath)
         
         var fruitsOnDate = [FruitLItem]()
-        // looper gjennom alle fruits, og sjekker om datoen er lik dato av nåverende section. 
+        // looper gjennom alle dbfruits, og sjekker om hver enkelt dato er lik dato for index av nåverende section(en section per dato).
         for fruit in fruits {
             let stringDate = dateFormatter.string(from: fruit.date!)
             if(stringDate == dateSet[indexPath.section]){
@@ -72,8 +72,14 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        
         return "footer"
     }
+    
+    
+    /*func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        // her skal logikken inn
+    }*/
     
     
     
@@ -101,19 +107,9 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             }
         }
         catch {
-        // errror
+        // errror uiAlert?
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
