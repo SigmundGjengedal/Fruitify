@@ -10,24 +10,22 @@ import UIKit
 class EatFruitViewController: UIViewController {
     
     var fruit : FruitModel?
-    var date : String?
-    var weekDay : String?
+    var date : Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // bare debug
-        print(date!)
     }
     
 
     @IBAction func logbtnPressed(_ sender: UIButton) {
         // back to root (List all fruits)
-    // self.navigationController?.popToRootViewController(animated: true)
+     self.navigationController?.popToRootViewController(animated: true)
         if let safeDate = date {
             print(safeDate)
         }
-        
-        print(weekDay!)
+        print(fruit!)
+        print(date!)
       
     }
     
@@ -37,14 +35,7 @@ class EatFruitViewController: UIViewController {
     }
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
-        let selectedDate = sender.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        self.date = dateFormatter.string(from: selectedDate)
-       // let weekday = Calendar.current.component(.weekday, from:selectedDate)
-     
-        weekDay = dateFormatter.weekdaySymbols[Calendar.current.component(.weekday, from: selectedDate ) - 1]
-        
+        self.date = sender.date
     
     }
 }
