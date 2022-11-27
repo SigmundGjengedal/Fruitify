@@ -378,7 +378,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jld-8d-BTy">
-                                <rect key="frame" x="47" y="423" width="320" height="50"/>
+                                <rect key="frame" x="-9.5" y="423" width="320.5" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UrN-l1-F7n"/>
                                 </constraints>
@@ -386,22 +386,33 @@
                                     <action selector="datePickerChanged:" destination="422-k2-vDi" eventType="valueChanged" id="ObO-AG-nsw"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNZ-gm-PeW">
-                                <rect key="frame" x="114" y="576" width="187" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNZ-gm-PeW">
+                                <rect key="frame" x="114" y="493" width="74.5" height="95"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Loggfør"/>
                                 <connections>
                                     <action selector="logbtnPressed:" destination="422-k2-vDi" eventType="touchUpInside" id="Hda-av-EoX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-eW-KZY">
-                                <rect key="frame" x="114" y="629" width="187" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-eW-KZY">
+                                <rect key="frame" x="114" y="610" width="74.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8p5-11-ukV"/>
+                                    <constraint firstAttribute="height" constant="50" id="OOa-3N-oYW"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Avbryt"/>
                                 <connections>
                                     <action selector="canceelBtnPressed:" destination="422-k2-vDi" eventType="touchUpInside" id="Rn2-AK-dGw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Når spiste du frukten?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-gi-S3c">
+                                <rect key="frame" x="123" y="384" width="168" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K1h-NE-q6R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
