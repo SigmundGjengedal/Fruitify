@@ -367,6 +367,7 @@
                         <outlet property="caloriesLabelValue" destination="Ivd-6P-10I" id="ZvI-57-dZm"/>
                         <outlet property="carbsLabel" destination="65d-rH-zY2" id="NKp-LQ-UD0"/>
                         <outlet property="carbsLabelValue" destination="Y9m-Ci-auj" id="S3o-5z-bSG"/>
+                        <outlet property="detailsContainerView" destination="8Pb-Bo-ycr" id="0GW-R2-CtB"/>
                         <outlet property="familyLabel" destination="N6h-uv-Hw7" id="82i-SH-vdd"/>
                         <outlet property="familyLabelValue" destination="wl6-hD-J9A" id="cEQ-kI-aEQ"/>
                         <outlet property="fatLabel" destination="VhQ-x0-CU1" id="AW4-Fu-SMt"/>

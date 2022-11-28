@@ -96,7 +96,6 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             totalCarbs += fruit.carbohydrates
             totalCal += Int(fruit.calories)
             totalFat += fruit.fat
-            
         }
         
         footer.sugarLabelValue.text = "sukker: \(String(format: "%.2f", totalSugar))"

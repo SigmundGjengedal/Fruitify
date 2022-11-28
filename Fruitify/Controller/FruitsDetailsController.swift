@@ -10,6 +10,7 @@ import UIKit
 class FruitsDetailsController: UIViewController {
     var fruit : FruitModel?
     
+    @IBOutlet weak var detailsContainerView: UIView!
     @IBOutlet weak var familyLabel: UILabel!
  
     @IBOutlet weak var familyLabelValue: UILabel!
@@ -71,6 +72,7 @@ class FruitsDetailsController: UIViewController {
             if(hasWarning){
                 sugarWarningLabel.text = "High sugar"
                 sugarWarningLabel.backgroundColor = .red
+                getRandomColor()
             }else {
                 sugarWarningLabel.text = "Low sugar"
                 sugarWarningLabel.backgroundColor = .green
@@ -78,9 +80,21 @@ class FruitsDetailsController: UIViewController {
             }
         }
         
-        // mulig jeg endrer ui.
+        // endrer ui om tid.
        
     }// end of didLoad
+    
+    // ref kilde
+    func getRandomColor() {
+        let red   = CGFloat((arc4random() % 256)) / 255.0
+        let alpha = CGFloat(1.0)
+
+        UIView.animate(withDuration: 1.0, delay: 0.0, options:[.repeat, .autoreverse], animations: {
+            self.view.backgroundColor = UIColor(red: red, green: 0, blue: 0, alpha: alpha)
+            self.detailsContainerView.backgroundColor = UIColor(red: red, green: 0, blue: 0, alpha: alpha)
+            
+        }, completion:nil)
+    }
     
     
     @IBAction func eatPressed(_ sender: UIButton) {
