@@ -72,25 +72,6 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         return "\(weekDay) \(dateSet[section])"
     }
     
-   /* func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        
-        var totalSugar : Double = 0.0
-        
-        var fruitsOnDate = [FruitLItem]()
-        for fruit in fruits {
-            let stringDbDate = dateFormatter.string(from: fruit.date!)
-            if(stringDbDate == dateSet[section]){
-                fruitsOnDate.append(fruit)
-            }
-        }
-    
-        for fruit in fruitsOnDate {
-            totalSugar += fruit.sugar
-        }
-        return "Totalt sukker: \(totalSugar)"
-    }*/
-    
-    
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "LogFooterView") as! LogFooterView
@@ -118,11 +99,11 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             
         }
         
-        footer.sugarLabelValue.text = "sukker: \(totalSugar)"
-        footer.proteinLabelValue.text = "protein: \(totalProtein)"
-        footer.totalCarbsLabel.text = "Karbohydrater: \(totalCarbs)"
+        footer.sugarLabelValue.text = "sukker: \(String(format: "%.2f", totalSugar))"
+        footer.proteinLabelValue.text = "protein: \(String(format: "%.2f", totalProtein))"
+        footer.totalCarbsLabel.text = "Karbohydrater: \(String(format: "%.2f", totalCarbs))"
         footer.totalCalVallueLabel.text = "Kalorier: \(totalCal)"
-        footer.totalFatValueLabel.text = "Fett: \(totalFat)"
+        footer.totalFatValueLabel.text = "Fett: \(String(format: "%.2f", totalFat))"
         return footer
     }
     
