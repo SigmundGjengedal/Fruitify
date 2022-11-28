@@ -38,7 +38,7 @@ struct FruitModel {
         String(format: "%.1f", sugar)
     }
     var showWarning : Bool {
-        if sugar < 10 {
+        if sugar <= 10 {
             return false
         } else {
             return true
