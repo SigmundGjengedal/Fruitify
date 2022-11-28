@@ -9,6 +9,9 @@ import UIKit
 
 class FruitsDetailsController: UIViewController {
     var fruit : FruitModel?
+    var fruitData = [FruitModel]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var detailsContainerView: UIView!
     @IBOutlet weak var familyLabel: UILabel!
@@ -68,7 +71,7 @@ class FruitsDetailsController: UIViewController {
         sugarLabel.text = "Sugar"
         sugarLabelValue.text = fruit?.sugarAsString
         
-        rainEatenFruits(eatenFruits: ["🏆","❤️","🎿", "🔥"])
+     
         
         if let hasWarning = fruit?.showWarning{
             if(hasWarning){
@@ -82,6 +85,40 @@ class FruitsDetailsController: UIViewController {
             }
         }
         
+        // animations kall
+        
+        
+        let numFruits =  getNumEatenFruitThisMonth()
+        if(numFruits>0){
+            var emoji : String {
+                switch fruit?.name {
+               case "Apple":
+                   return "🍎"
+               case "Orange":
+                    return "🍊"
+               case "Lemon":
+                    return "🍋"
+                case "Blueberry":
+                     return "🫐"
+                case "Cherry":
+                     return "🍒"
+                // ananas, kiwi, solbær
+                case "Pineapple":
+                      return "🍍"
+                case "Kiwi":
+                    return "🥝"
+                case "Grapes":
+                    return "🍇"
+              case "Banana":
+                    return "🍌"
+               default:
+                   return "💯"
+               }
+            }
+            rainEatenFruits(with: emoji, count: numFruits)
+        }
+  
+        
         // endrer ui om tid.
        
     }// end of didLoad
@@ -94,13 +131,14 @@ class FruitsDetailsController: UIViewController {
         }, completion:nil)
     }
     
-    func rainEatenFruits(eatenFruits :[String]) {
+    // flyttes til Fruitbrain?
+    func rainEatenFruits(with emoji: String, count : Int) {
      
-        for fruit in eatenFruits {
+        for _ in 0..<count {
             let randomXPosition = Int.random(in: 100..<Int(view.frame.width)-100)
             let randomYPosition = Int.random(in: -40...0)
             let fruitLabel = UILabel()
-            fruitLabel.text = fruit
+            fruitLabel.text = emoji
             fruitLabel.frame = CGRect(x: randomXPosition, y: randomYPosition, width:50 , height: 50)
             fruitLabel.font = fruitLabel.font.withSize(40)
             view.addSubview(fruitLabel)
@@ -111,11 +149,28 @@ class FruitsDetailsController: UIViewController {
                 
             }, completion:nil)
         }
-        
-     
-        
-   
     }
+    
+    // CRUD FLYTTES TIL DBSERVICE?
+    func getNumEatenFruitThisMonth() -> Int{
+        do{
+            var dbFruits = [FruitLItem]()
+            
+            dbFruits = try context.fetch(FruitLItem.fetchRequest())
+            
+            var matchedFruits = [FruitLItem]()
+            let oneMonthAgo = Date(timeIntervalSinceNow: -30 * 60 * 60 * 24)
+            matchedFruits = dbFruits.filter {$0.date! > oneMonthAgo}
+            //
+            return matchedFruits.filter {$0.name == fruit?.name}.count
+        }
+        catch {
+        print(error)
+        }
+        return 0
+    }
+    
+    
     
     
     @IBAction func eatPressed(_ sender: UIButton) {
@@ -129,4 +184,6 @@ class FruitsDetailsController: UIViewController {
     }
     
 }
+    
+
 }

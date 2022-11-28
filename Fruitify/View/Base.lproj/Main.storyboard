@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jld-8d-BTy">
-                                <rect key="frame" x="-9.5" y="423" width="320.5" height="50"/>
+                                <rect key="frame" x="47" y="423" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UrN-l1-F7n"/>
                                 </constraints>
@@ -403,16 +403,17 @@
                                     <action selector="datePickerChanged:" destination="422-k2-vDi" eventType="valueChanged" id="ObO-AG-nsw"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNZ-gm-PeW">
-                                <rect key="frame" x="114" y="493" width="74.5" height="95"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNZ-gm-PeW">
+                                <rect key="frame" x="101" y="493" width="200" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Loggfør"/>
                                 <connections>
                                     <action selector="logbtnPressed:" destination="422-k2-vDi" eventType="touchUpInside" id="Hda-av-EoX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-eW-KZY">
-                                <rect key="frame" x="114" y="610" width="74.5" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-eW-KZY">
+                                <rect key="frame" x="101" y="610" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="8p5-11-ukV"/>
                                     <constraint firstAttribute="height" constant="50" id="OOa-3N-oYW"/>
@@ -434,16 +435,8 @@
                         <viewLayoutGuide key="safeArea" id="K1h-NE-q6R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KNZ-gm-PeW" firstAttribute="leading" secondItem="K1h-NE-q6R" secondAttribute="leading" constant="114" id="4oy-7n-7PL"/>
-                            <constraint firstItem="K1h-NE-q6R" firstAttribute="trailing" secondItem="SD7-eW-KZY" secondAttribute="trailing" constant="113" id="9CO-f6-70n"/>
-                            <constraint firstItem="jld-8d-BTy" firstAttribute="centerY" secondItem="JAz-CD-YCp" secondAttribute="centerY" id="NiX-Oe-FYL"/>
-                            <constraint firstItem="SD7-eW-KZY" firstAttribute="top" secondItem="KNZ-gm-PeW" secondAttribute="bottom" constant="22" id="S3f-lQ-nv0"/>
-                            <constraint firstItem="K1h-NE-q6R" firstAttribute="bottom" secondItem="SD7-eW-KZY" secondAttribute="bottom" constant="202" id="WRx-2O-pt6"/>
-                            <constraint firstItem="jld-8d-BTy" firstAttribute="centerX" secondItem="JAz-CD-YCp" secondAttribute="centerX" id="cFA-Q6-7O1"/>
-                            <constraint firstItem="SD7-eW-KZY" firstAttribute="leading" secondItem="K1h-NE-q6R" secondAttribute="leading" constant="114" id="d4a-S6-feq"/>
-                            <constraint firstItem="KNZ-gm-PeW" firstAttribute="top" secondItem="jld-8d-BTy" secondAttribute="bottom" constant="20" id="ftL-It-JQk"/>
-                            <constraint firstItem="K1h-NE-q6R" firstAttribute="trailing" secondItem="KNZ-gm-PeW" secondAttribute="trailing" constant="113" id="hNM-Qh-qzd"/>
-                            <constraint firstItem="SD7-eW-KZY" firstAttribute="top" secondItem="KNZ-gm-PeW" secondAttribute="bottom" constant="22" id="npR-sN-w9N"/>
+                            <constraint firstItem="jld-8d-BTy" firstAttribute="centerY" secondItem="JAz-CD-YCp" secondAttribute="centerY" id="MAO-yW-mc0"/>
+                            <constraint firstItem="jld-8d-BTy" firstAttribute="centerX" secondItem="JAz-CD-YCp" secondAttribute="centerX" id="bla-zr-kdN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zk1-Rg-68U"/>
