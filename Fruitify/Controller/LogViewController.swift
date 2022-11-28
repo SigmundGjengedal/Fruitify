@@ -122,12 +122,15 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         footer.proteinLabelValue.text = "protein: \(totalProtein)"
         footer.totalCarbsLabel.text = "Karbohydrater: \(totalCarbs)"
         footer.totalCalVallueLabel.text = "Kalorier: \(totalCal)"
-        footer.totalFatValueLabel.text = "Fett: \(totalFat)"        
+        footer.totalFatValueLabel.text = "Fett: \(totalFat)"
         return footer
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 200
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
     
     
