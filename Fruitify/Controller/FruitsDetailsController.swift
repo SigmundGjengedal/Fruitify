@@ -68,6 +68,8 @@ class FruitsDetailsController: UIViewController {
         sugarLabel.text = "Sugar"
         sugarLabelValue.text = fruit?.sugarAsString
         
+        rainEatenFruits(eatenFruits: ["🏆","❤️","🎿", "🔥"])
+        
         if let hasWarning = fruit?.showWarning{
             if(hasWarning){
                 sugarWarningLabel.text = "High sugar"
@@ -90,6 +92,29 @@ class FruitsDetailsController: UIViewController {
             self.detailsContainerView.backgroundColor = .red
             
         }, completion:nil)
+    }
+    
+    func rainEatenFruits(eatenFruits :[String]) {
+     
+        for fruit in eatenFruits {
+            let randomXPosition = Int.random(in: 100..<Int(view.frame.width)-100)
+            let randomYPosition = Int.random(in: -40...0)
+            let fruitLabel = UILabel()
+            fruitLabel.text = fruit
+            fruitLabel.frame = CGRect(x: randomXPosition, y: randomYPosition, width:50 , height: 50)
+            fruitLabel.font = fruitLabel.font.withSize(40)
+            view.addSubview(fruitLabel)
+            
+            UIView.animate(withDuration: 3.0, delay: 0.0, options:[.allowUserInteraction], animations: {
+                fruitLabel.frame = CGRect(x: randomXPosition, y: 1000, width: 50, height: 50)
+                fruitLabel.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                
+            }, completion:nil)
+        }
+        
+     
+        
+   
     }
     
     
