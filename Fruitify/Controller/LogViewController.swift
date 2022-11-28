@@ -17,13 +17,14 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var logTableView: UITableView!
     let dateFormatter = DateFormatter()
-  
-    
     private var fruits = [FruitLItem]()
     var dateSet : [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let myFooterNib = UINib(nibName: "LogFooterView", bundle: nil)
+        logTableView.register(myFooterNib, forHeaderFooterViewReuseIdentifier: "LogFooterView")
+        
         getAllFruits()
         logTableView.delegate = self
         logTableView.dataSource = self
@@ -55,8 +56,8 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         var fruitsOnDate = [FruitLItem]()
         // looper gjennom alle dbfruits, og sjekker om hver enkelt dato er lik dato for index av nåverende section(en section per dato).
         for fruit in fruits {
-            let stringDate = dateFormatter.string(from: fruit.date!)
-            if(stringDate == dateSet[indexPath.section]){
+            let stringDbDate = dateFormatter.string(from: fruit.date!)
+            if(stringDbDate == dateSet[indexPath.section]){
                 fruitsOnDate.append(fruit)
             }
         }
@@ -71,15 +72,63 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         return "\(weekDay) \(dateSet[section])"
     }
     
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+   /* func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         
-        return "footer"
+        var totalSugar : Double = 0.0
+        
+        var fruitsOnDate = [FruitLItem]()
+        for fruit in fruits {
+            let stringDbDate = dateFormatter.string(from: fruit.date!)
+            if(stringDbDate == dateSet[section]){
+                fruitsOnDate.append(fruit)
+            }
+        }
+    
+        for fruit in fruitsOnDate {
+            totalSugar += fruit.sugar
+        }
+        return "Totalt sukker: \(totalSugar)"
+    }*/
+    
+    
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "LogFooterView") as! LogFooterView
+        
+        var totalSugar : Double = 0.0
+        var totalProtein : Double = 0.0
+        var totalCarbs : Double = 0.0
+        var totalCal : Int = 0
+        var totalFat : Double = 0.0
+        
+        var fruitsOnDate = [FruitLItem]()
+        for fruit in fruits {
+            let stringDbDate = dateFormatter.string(from: fruit.date!)
+            if(stringDbDate == dateSet[section]){
+                fruitsOnDate.append(fruit)
+            }
+        }
+    
+        for fruit in fruitsOnDate {
+            totalSugar += fruit.sugar
+            totalProtein += fruit.protein
+            totalCarbs += fruit.carbohydrates
+            totalCal += Int(fruit.calories)
+            totalFat += fruit.fat
+            
+        }
+        
+        footer.sugarLabelValue.text = "sukker: \(totalSugar)"
+        footer.proteinLabelValue.text = "protein: \(totalProtein)"
+        footer.totalCarbsLabel.text = "Karbohydrater: \(totalCarbs)"
+        footer.totalCalVallueLabel.text = "Kalorier: \(totalCal)"
+        footer.totalFatValueLabel.text = "Fett: \(totalFat)"        
+        return footer
     }
     
-    
-    /*func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        // her skal logikken inn
-    }*/
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 200
+    }
     
     
     
@@ -91,12 +140,11 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             var dbFruits = [FruitLItem]()
             dbFruits = try context.fetch(FruitLItem.fetchRequest())
             fruits = dbFruits.sorted(by: {$0.date! < $1.date!})
-            
-            // bygger unikt set med datoer for section .count
+            // bygger unikt set med datoer for sortering i tableview
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             for fruit in fruits {
-                print("\(fruit.name!) \(fruit.date!)")
+               // print("\(fruit.name!) \(fruit.date!)")
                let stringDate = dateFormatter.string(from: fruit.date!)
                 if(!dateSet.contains(stringDate)){
                     dateSet.append(stringDate)
@@ -107,7 +155,7 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             }
         }
         catch {
-        // errror uiAlert?
+        // errror
         }
     }
     

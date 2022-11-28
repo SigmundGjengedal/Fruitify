@@ -17,6 +17,8 @@
 		96A034EB2930F585007A914D /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034EA2930F585007A914D /* LogViewController.swift */; };
 		96A034F22931387D007A914D /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A034F02931387D007A914D /* MyCollectionViewCell.swift */; };
 		96A034F32931387D007A914D /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96A034F12931387D007A914D /* MyCollectionViewCell.xib */; };
+		96AE05D82934DB930014423F /* LogFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AE05D72934DB930014423F /* LogFooterView.swift */; };
+		96AE05DA2934DBBA0014423F /* LogFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96AE05D92934DBBA0014423F /* LogFooterView.xib */; };
 		96E96C55292D06A9007E9048 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C54292D06A9007E9048 /* AppDelegate.swift */; };
 		96E96C57292D06A9007E9048 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C56292D06A9007E9048 /* SceneDelegate.swift */; };
 		96E96C59292D06A9007E9048 /* ListFruitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E96C58292D06A9007E9048 /* ListFruitsViewController.swift */; };
@@ -61,6 +63,8 @@
 		96A034EA2930F585007A914D /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		96A034F02931387D007A914D /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		96A034F12931387D007A914D /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
+		96AE05D72934DB930014423F /* LogFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFooterView.swift; sourceTree = "<group>"; };
+		96AE05D92934DBBA0014423F /* LogFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogFooterView.xib; sourceTree = "<group>"; };
 		96E96C51292D06A9007E9048 /* Fruitify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fruitify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E96C54292D06A9007E9048 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96E96C56292D06A9007E9048 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				96A034F12931387D007A914D /* MyCollectionViewCell.xib */,
 				9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */,
 				9664CAD5293280B7001D9B36 /* EatFruitViewController.swift */,
+				96AE05D72934DB930014423F /* LogFooterView.swift */,
+				96AE05D92934DBBA0014423F /* LogFooterView.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 				96E96C61292D06AB007E9048 /* LaunchScreen.storyboard in Resources */,
 				96E96C5E292D06AB007E9048 /* Assets.xcassets in Resources */,
 				96A034F32931387D007A914D /* MyCollectionViewCell.xib in Resources */,
+				96AE05DA2934DBBA0014423F /* LogFooterView.xib in Resources */,
 				96E96C5C292D06A9007E9048 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96AE05D82934DB930014423F /* LogFooterView.swift in Sources */,
 				96E96C92292E82C0007E9048 /* FruitsDetailsController.swift in Sources */,
 				96E96C90292D6EED007E9048 /* MyTableViewCell.swift in Sources */,
 				961FEABC2933AA9600C623FA /* FruitLItem+CoreDataClass.swift in Sources */,
