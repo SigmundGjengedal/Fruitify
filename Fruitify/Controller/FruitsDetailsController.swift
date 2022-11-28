@@ -72,7 +72,7 @@ class FruitsDetailsController: UIViewController {
             if(hasWarning){
                 sugarWarningLabel.text = "High sugar"
                 sugarWarningLabel.backgroundColor = .red
-                getRandomColor()
+                animateBackground()
             }else {
                 sugarWarningLabel.text = "Low sugar"
                 sugarWarningLabel.backgroundColor = .green
@@ -84,14 +84,10 @@ class FruitsDetailsController: UIViewController {
        
     }// end of didLoad
     
-    // ref kilde
-    func getRandomColor() {
-        let red   = CGFloat((arc4random() % 256)) / 255.0
-        let alpha = CGFloat(1.0)
-
-        UIView.animate(withDuration: 1.0, delay: 0.0, options:[.repeat, .autoreverse], animations: {
-            self.view.backgroundColor = UIColor(red: red, green: 0, blue: 0, alpha: alpha)
-            self.detailsContainerView.backgroundColor = UIColor(red: red, green: 0, blue: 0, alpha: alpha)
+    func animateBackground() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options:[.repeat, .autoreverse, .allowUserInteraction], animations: {
+            self.view.backgroundColor = .red
+            self.detailsContainerView.backgroundColor = .red
             
         }, completion:nil)
     }
