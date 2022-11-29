@@ -395,13 +395,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jld-8d-BTy">
-                                <rect key="frame" x="47" y="345" width="320" height="216"/>
+                                <rect key="frame" x="47" y="144" width="320" height="216"/>
                                 <connections>
                                     <action selector="datePickerChanged:" destination="422-k2-vDi" eventType="valueChanged" id="ObO-AG-nsw"/>
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNZ-gm-PeW">
-                                <rect key="frame" x="107" y="631" width="200" height="50"/>
+                                <rect key="frame" x="107" y="380" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ANh-JV-lb3"/>
                                     <constraint firstAttribute="width" constant="200" id="Qsw-7d-wda"/>
@@ -412,13 +412,6 @@
                                     <action selector="logbtnPressed:" destination="422-k2-vDi" eventType="touchUpInside" id="Hda-av-EoX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Når spiste du frukten?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-gi-S3c">
-                                <rect key="frame" x="123" y="384" width="168" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-eW-KZY">
                                 <rect key="frame" x="107" y="689" width="200" height="50"/>
                                 <state key="normal" title="Button"/>
@@ -427,17 +420,24 @@
                                     <action selector="canceelBtnPressed:" destination="422-k2-vDi" eventType="touchUpInside" id="Rn2-AK-dGw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Når spiste du frukten?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKr-gi-S3c">
+                                <rect key="frame" x="123" y="96" width="168" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K1h-NE-q6R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SD7-eW-KZY" firstAttribute="top" secondItem="KNZ-gm-PeW" secondAttribute="bottom" constant="8" symbolic="YES" id="4XK-9l-1H3"/>
-                            <constraint firstItem="K1h-NE-q6R" firstAttribute="bottom" secondItem="SD7-eW-KZY" secondAttribute="bottom" constant="123" id="67e-Vv-Pz8"/>
                             <constraint firstItem="jld-8d-BTy" firstAttribute="centerX" secondItem="K1h-NE-q6R" secondAttribute="centerX" id="DUI-0W-b5A"/>
+                            <constraint firstItem="KNZ-gm-PeW" firstAttribute="top" secondItem="jld-8d-BTy" secondAttribute="bottom" constant="20" id="FMf-HD-2qq"/>
                             <constraint firstItem="KNZ-gm-PeW" firstAttribute="centerX" secondItem="K1h-NE-q6R" secondAttribute="centerX" id="Ts5-Nj-SQf"/>
-                            <constraint firstItem="jld-8d-BTy" firstAttribute="baseline" secondItem="KNZ-gm-PeW" secondAttribute="firstBaseline" priority="750" constant="-100" id="hrW-RA-ccg"/>
+                            <constraint firstItem="cKr-gi-S3c" firstAttribute="centerX" secondItem="K1h-NE-q6R" secondAttribute="centerX" id="iFm-n1-mhM"/>
                             <constraint firstItem="SD7-eW-KZY" firstAttribute="centerX" secondItem="K1h-NE-q6R" secondAttribute="centerX" id="nDS-p8-K7R"/>
-                            <constraint firstItem="jld-8d-BTy" firstAttribute="centerY" secondItem="K1h-NE-q6R" secondAttribute="centerY" id="stx-E7-iz4"/>
+                            <constraint firstItem="jld-8d-BTy" firstAttribute="top" secondItem="K1h-NE-q6R" secondAttribute="top" constant="100" id="nVI-Qv-43g"/>
+                            <constraint firstItem="jld-8d-BTy" firstAttribute="top" secondItem="cKr-gi-S3c" secondAttribute="bottom" constant="27.5" id="vrx-jv-MLs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zk1-Rg-68U"/>
