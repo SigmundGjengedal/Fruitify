@@ -361,15 +361,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIu-GY-oRP">
+                                <rect key="frame" x="148" y="433" width="95" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Replay"/>
+                                <connections>
+                                    <action selector="replayPressed:" destination="cBX-iB-FwQ" eventType="touchUpInside" id="CQQ-z8-XWB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7SN-MA-TtE"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cIu-GY-oRP" firstAttribute="top" secondItem="7SN-MA-TtE" secondAttribute="top" constant="389" id="4B0-li-MoD"/>
                             <constraint firstItem="hJg-ob-wcY" firstAttribute="centerX" secondItem="8Pb-Bo-ycr" secondAttribute="centerX" id="QA2-Ox-Rlx"/>
                             <constraint firstItem="8Pb-Bo-ycr" firstAttribute="top" secondItem="7SN-MA-TtE" secondAttribute="top" constant="2" id="UYR-Vs-gBm"/>
                             <constraint firstItem="B24-ov-oFo" firstAttribute="centerX" secondItem="hJg-ob-wcY" secondAttribute="centerX" id="hYU-kw-xS1"/>
                             <constraint firstItem="8Pb-Bo-ycr" firstAttribute="centerX" secondItem="7SN-MA-TtE" secondAttribute="centerX" id="j1K-r6-QLE"/>
                             <constraint firstItem="hJg-ob-wcY" firstAttribute="top" secondItem="8Pb-Bo-ycr" secondAttribute="bottom" constant="2" id="m4g-gP-RW3"/>
+                            <constraint firstItem="cIu-GY-oRP" firstAttribute="leading" secondItem="7SN-MA-TtE" secondAttribute="leading" constant="148" id="qHR-r3-Zd9"/>
                             <constraint firstItem="B24-ov-oFo" firstAttribute="top" secondItem="hJg-ob-wcY" secondAttribute="bottom" constant="8" id="ycU-2v-be0"/>
                         </constraints>
                     </view>
@@ -389,6 +399,7 @@
                         <outlet property="orderLabelValue" destination="zTK-8y-jgC" id="hYw-Rj-WIy"/>
                         <outlet property="proteinLabel" destination="c7h-Rq-7R8" id="ARH-Tx-552"/>
                         <outlet property="proteinLabelValue" destination="DbM-Zb-Mn1" id="4NH-t5-FWc"/>
+                        <outlet property="replayButtonOutlet" destination="cIu-GY-oRP" id="CF4-qP-fTc"/>
                         <outlet property="sugarLabel" destination="cmF-E7-8gX" id="X23-sp-h8w"/>
                         <outlet property="sugarLabelValue" destination="wnl-SU-a9g" id="Ymg-mR-ig1"/>
                         <outlet property="sugarWarningLabel" destination="hJg-ob-wcY" id="jSm-tI-s15"/>

@@ -11,6 +11,9 @@ class FruitsDetailsController: UIViewController {
     var fruit : FruitModel?
     var fruitData = [FruitModel]()
     
+    var emoji : String = ""
+    var numFruits = 0
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var detailsContainerView: UIView!
@@ -42,11 +45,15 @@ class FruitsDetailsController: UIViewController {
     
     @IBOutlet weak var sugarWarningLabel: UILabel!
     
+    @IBOutlet weak var replayButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = fruit?.name
+        
        
+       
+        replayButtonOutlet.isHidden = true
         familyLabel.text = "family"
         familyLabelValue.text = fruit?.family
         
@@ -85,19 +92,25 @@ class FruitsDetailsController: UIViewController {
             }
         }
         
-        // animations kall
-        
+        // animasjons kall
         if let fruit = fruit {
-            let numFruits =  getNumEatenFruitThisMonth()
+            numFruits =  getNumEatenFruitThisMonth()
             if(numFruits>0){
                 let fruitEmojis : [String:String] = ["Apple" : "🍎", "Orange": "🍊",  "Lemon" :"🍋","Blueberry":"🫐","Cherry":"🍒","Pineapple" : "🍍", "Kiwi":"🥝", "Grapes":"🍇", "Banana":"🍌"]
-                let emoji = fruitEmojis[fruit.name] ?? "💯"
+                
+                emoji = fruitEmojis[fruit.name] ?? "💯"
                 rainEatenFruits(with: emoji, count: numFruits)
+                replayButtonOutlet.isHidden = false
                 }
         }
-        // endrer ui om tid.
+       
        
     }// end of didLoad
+    
+    
+    @IBAction func replayPressed(_ sender: UIButton) {
+        rainEatenFruits(with: emoji, count: numFruits)
+    }
     
     func animateBackground() {
         UIView.animate(withDuration: 1.0, delay: 0.0, options:[.repeat, .autoreverse, .allowUserInteraction], animations: {
