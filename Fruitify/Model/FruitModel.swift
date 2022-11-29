@@ -3,7 +3,7 @@
 //  Fruitify
 //
 //  Created by Sigmund Andre Gjengedal on 22/11/2022.
-//  Sparer kode ved å gjøre alle nødvendige operasjoner her? Slipper kalle de manuelt, skjer automatisk.
+//  For å prossessere data fra api en gang
 
 import Foundation
 import UIKit
@@ -13,6 +13,7 @@ struct FruitModel {
     let name : String
     let id : Int
     let family : String
+    let familyColor : UIColor
     let order : String
     // for calculations
     let carbohydrates: Double
@@ -20,7 +21,6 @@ struct FruitModel {
     let fat : Double
     let calories: Int
     let sugar : Double
-    
     // for ui output
     var carbohydratesAsString : String {
         String(format: "%.1f", carbohydrates)
@@ -44,55 +44,7 @@ struct FruitModel {
             return true
         }
     }
-    var colorName : UIColor {
-        switch family {
-        case  "Rosaceae":
-            return .red
-        case  "Lauraceae":
-            return .green
-        case  "Musaceae":
-            return .blue
-        case  "Cactaceae":
-            return .yellow
-        case  "Malvaceae":
-            return .purple
-        case  "Moraceae":
-            return .orange
-        case  "Grossulariaceae":
-            return .black
-        case  "Actinidiaceae":
-            return .brown
-        case "Rutaceae":
-            return .cyan
-        case "Ericaceae":
-            return .lightGray
-        case "Sapindaceae" :
-            return .systemTeal
-        case "Anacardiaceae" :
-            return .systemGray6
-        case "Cucurbitaceae":
-            return .systemGray4
-        case "Caricaceae":
-            return .systemIndigo
-        case  "Vitaceae":
-            return .systemMint
-        case  "Myrtaceae":
-            return .systemPink
-        case "Passifloraceae":
-            return .systemPurple
-        case "Ebenaceae":
-            return .systemBlue
-        case "Bromeliaceae":
-            return .systemGray2
-        case "Lythraceae":
-            return .systemGray3
-        case "Solanaceae" :
-            return .secondaryLabel
-        default:
-            return .white
-
-        }
-    }
+   
 }
     
 

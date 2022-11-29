@@ -87,7 +87,7 @@ extension ListFruitsViewController : UITableViewDataSource {
         
         // props i MyTableViewCell
         cell.fruitName.text = name
-        cell.familyImage.backgroundColor = fruitData[indexPath.row].colorName
+        cell.familyImage.backgroundColor = fruitData[indexPath.row].familyColor
         
         return cell
     }

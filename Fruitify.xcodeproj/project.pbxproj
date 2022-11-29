@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		96127C2229368F6B00C50512 /* alertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96127C2129368F6B00C50512 /* alertController.swift */; };
+		96127C2529369F5900C50512 /* FamilyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96127C2429369F5900C50512 /* FamilyColor.swift */; };
 		961FEAB92933A04700C623FA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961FEAB72933A04700C623FA /* DataModel.xcdatamodeld */; };
 		961FEABC2933AA9600C623FA /* FruitLItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961FEABA2933AA9600C623FA /* FruitLItem+CoreDataClass.swift */; };
 		961FEABD2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961FEABB2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		96127C2129368F6B00C50512 /* alertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertController.swift; sourceTree = "<group>"; };
+		96127C2429369F5900C50512 /* FamilyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyColor.swift; sourceTree = "<group>"; };
 		961FEAB82933A04700C623FA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		961FEABA2933AA9600C623FA /* FruitLItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitLItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		961FEABB2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitLItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				96127C2129368F6B00C50512 /* alertController.swift */,
+				96127C2429369F5900C50512 /* FamilyColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				961FEABD2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift in Sources */,
 				96E96C87292D0B1B007E9048 /* FruitData.swift in Sources */,
 				96E96C8C292D33C5007E9048 /* FruitModel.swift in Sources */,
+				96127C2529369F5900C50512 /* FamilyColor.swift in Sources */,
 				96127C2229368F6B00C50512 /* alertController.swift in Sources */,
 				96E96C57292D06A9007E9048 /* SceneDelegate.swift in Sources */,
 			);

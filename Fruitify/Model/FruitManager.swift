@@ -6,15 +6,10 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct FruitManager {
-    
-   // "https://www.fruityvice.com/api/fruit/all"
-   // https://www.fruityvice.com/api/fruit/family/:family , https://www.fruityvice.com/api/fruit/family/Rosaceae
-    // https://www.fruityvice.com/api/fruit/genus/:genus , https://www.fruityvice.com/api/fruit/genus/rubus
-    //https://www.fruityvice.com/api/fruit/order/:order, https://www.fruityvice.com/api/fruit/order/Solanales
-    
+        
     static var globalFruits = [FruitModel]()
     
     func fetchAllFruits(urlString : String,completion: @escaping (Result<[FruitModel], Error>) -> Void){
@@ -39,6 +34,17 @@ struct FruitManager {
         do{
             let parsingData = try JSONDecoder().decode([Fruit].self, from: fruitData)
             var processedFruit  : [FruitModel] = []
+            
+            // dict av unike colors per familie
+            var familySet = Set<String>()
+            for fruit in parsingData{
+                familySet.insert(fruit.family)
+            }
+            var colordict1 = [String:UIColor]()
+            for family in familySet{
+                colordict1[family] = .random
+            }
+            // bygger struct med computed props (FruitModel)
             for fruit in parsingData{
                 let genus = fruit.genus
                 let name = fruit.name
@@ -51,7 +57,8 @@ struct FruitManager {
                 let fat =  fruit.nutritions.fat
                 let calories  = fruit.nutritions.calories
                 let sugar = fruit.nutritions.sugar
-                let fruitM = FruitModel(genus: genus ,name: name, id: id, family: family, order: order,carbohydrates: carbohydrates,protein: protein,fat:fat,calories: calories,sugar: sugar)
+                let familyColor = colordict1[fruit.family] ?? .white
+                let fruitM = FruitModel(genus: genus ,name: name, id: id, family: family, familyColor: familyColor, order: order,carbohydrates: carbohydrates,protein: protein,fat:fat,calories: calories,sugar: sugar)
                 processedFruit.append(fruitM)
             }
              FruitManager.globalFruits = processedFruit.sorted { $0.id < $1.id }
@@ -63,8 +70,10 @@ struct FruitManager {
     
     }
     
- 
+}
 
-
-    
+extension UIColor {
+    static var random: UIColor {
+        return .init(hue: .random(in: 0...1), saturation:  1, brightness: .random(in: 0.6...1), alpha: 1)
+    }
 }
