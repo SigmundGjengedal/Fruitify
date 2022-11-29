@@ -87,38 +87,14 @@ class FruitsDetailsController: UIViewController {
         
         // animations kall
         
-        
-        let numFruits =  getNumEatenFruitThisMonth()
-        if(numFruits>0){
-            var emoji : String {
-                switch fruit?.name {
-               case "Apple":
-                   return "🍎"
-               case "Orange":
-                    return "🍊"
-               case "Lemon":
-                    return "🍋"
-                case "Blueberry":
-                     return "🫐"
-                case "Cherry":
-                     return "🍒"
-                // ananas, kiwi, solbær
-                case "Pineapple":
-                      return "🍍"
-                case "Kiwi":
-                    return "🥝"
-                case "Grapes":
-                    return "🍇"
-              case "Banana":
-                    return "🍌"
-               default:
-                   return "💯"
-               }
-            }
-            rainEatenFruits(with: emoji, count: numFruits)
+        if let fruit = fruit {
+            let numFruits =  getNumEatenFruitThisMonth()
+            if(numFruits>0){
+                let fruitEmojis : [String:String] = ["Apple" : "🍎", "Orange": "🍊",  "Lemon" :"🍋","Blueberry":"🫐","Cherry":"🍒","Pineapple" : "🍍", "Kiwi":"🥝", "Grapes":"🍇", "Banana":"🍌"]
+                let emoji = fruitEmojis[fruit.name] ?? "💯"
+                rainEatenFruits(with: emoji, count: numFruits)
+                }
         }
-  
-        
         // endrer ui om tid.
        
     }// end of didLoad
