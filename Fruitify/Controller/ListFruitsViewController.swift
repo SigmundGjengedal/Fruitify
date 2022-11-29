@@ -28,21 +28,55 @@ class ListFruitsViewController: UIViewController {
     
     var fruitManager = FruitManager()
     
+    let utils = Util()
+  
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "All Fruits"
         // Do any additional setup after loading the view.
         setUrlString()
-        fruitManager.fetchAllFruits(urlString: urlString!) { result in
+        
+        
+        fruitManager.fetchAllFruits(urlString: urlString!) {
+            result in
+                switch result {
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.showSimpleAlert()
+                    }
+                    print(error)
+                case .success(let result):
+                    self.fruitData = result
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
             // print(result)
-            self.fruitData = result
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+           
         }
     }
+    func showSimpleAlert() {
+    
+          let alert = UIAlertController(title: "Sign out?", message: "You can always access your content by signing back in", preferredStyle: UIAlertController.Style.alert)
+
+          alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+              print("cancel")
+          }))
+          alert.addAction(UIAlertAction(title: "Sign out",
+                                        style: UIAlertAction.Style.default,
+                                        handler: {(_: UIAlertAction!) in
+              print("sign out")
+          }))
+        self.present(alert, animated: true, completion: nil)
+      }
+     
+    
     
 }
+
+
 
 //for interaksjon med bruker
 extension ListFruitsViewController : UITableViewDelegate {

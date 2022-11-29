@@ -17,19 +17,18 @@ struct FruitManager {
     
     static var globalFruits = [FruitModel]()
     
-    
-    func fetchAllFruits(urlString : String,completion: @escaping ([FruitModel]) -> Void){
+    func fetchAllFruits(urlString : String,completion: @escaping (Result<[FruitModel], Error>) -> Void){
         let url = URL(string : urlString)
         let session = URLSession.shared
         let dataTask = session.dataTask(with: url!) { data, response, error in
             
-            if error != nil {
-                print(error!)
+            if let error = error {
+                completion(.failure(error))
                 return
             }
             if let gotData = data {
                 if let parsingData = parseJSON(gotData){
-                    completion(parsingData)
+                    completion(.success(parsingData) )
                 }
             }
         }
@@ -63,7 +62,8 @@ struct FruitManager {
         }
     
     }
-    // test
+    
+ 
 
 
     
