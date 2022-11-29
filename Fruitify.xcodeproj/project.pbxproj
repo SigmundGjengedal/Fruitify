@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96127C1B293657A400C50512 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96127C1A293657A400C50512 /* Util.swift */; };
+		96127C2229368F6B00C50512 /* alertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96127C2129368F6B00C50512 /* alertController.swift */; };
 		961FEAB92933A04700C623FA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 961FEAB72933A04700C623FA /* DataModel.xcdatamodeld */; };
 		961FEABC2933AA9600C623FA /* FruitLItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961FEABA2933AA9600C623FA /* FruitLItem+CoreDataClass.swift */; };
 		961FEABD2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961FEABB2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift */; };
@@ -54,7 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		96127C1A293657A400C50512 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		96127C2129368F6B00C50512 /* alertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertController.swift; sourceTree = "<group>"; };
 		961FEAB82933A04700C623FA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		961FEABA2933AA9600C623FA /* FruitLItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitLItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		961FEABB2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FruitLItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -112,12 +112,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		96127C192936577D00C50512 /* lib */ = {
+		96127C1E29368F0300C50512 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				96127C1A293657A400C50512 /* Util.swift */,
+				96127C2129368F6B00C50512 /* alertController.swift */,
 			);
-			path = lib;
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		96127C232936926F00C50512 /* subViews and cells */ = {
+			isa = PBXGroup;
+			children = (
+				96A034F02931387D007A914D /* MyCollectionViewCell.swift */,
+				96E96C8F292D6EED007E9048 /* MyTableViewCell.swift */,
+				96AE05D72934DB930014423F /* LogFooterView.swift */,
+				9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */,
+			);
+			path = "subViews and cells";
 			sourceTree = "<group>";
 		};
 		96E96C48292D06A9007E9048 = {
@@ -145,7 +156,7 @@
 		96E96C53292D06A9007E9048 /* Fruitify */ = {
 			isa = PBXGroup;
 			children = (
-				96127C192936577D00C50512 /* lib */,
+				96127C1E29368F0300C50512 /* Utils */,
 				96E96C54292D06A9007E9048 /* AppDelegate.swift */,
 				96E96C88292D0B22007E9048 /* Model */,
 				96E96C56292D06A9007E9048 /* SceneDelegate.swift */,
@@ -179,15 +190,12 @@
 		96E96C84292D0ADC007E9048 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				96127C232936926F00C50512 /* subViews and cells */,
 				96E96C58292D06A9007E9048 /* ListFruitsViewController.swift */,
-				96E96C8F292D6EED007E9048 /* MyTableViewCell.swift */,
 				96E96C91292E82C0007E9048 /* FruitsDetailsController.swift */,
 				96A034E82930F32A007A914D /* GroupViewController.swift */,
 				96A034EA2930F585007A914D /* LogViewController.swift */,
-				96A034F02931387D007A914D /* MyCollectionViewCell.swift */,
-				9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */,
 				9664CAD5293280B7001D9B36 /* EatFruitViewController.swift */,
-				96AE05D72934DB930014423F /* LogFooterView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -358,12 +366,12 @@
 				96E96C59292D06A9007E9048 /* ListFruitsViewController.swift in Sources */,
 				96A034E92930F32A007A914D /* GroupViewController.swift in Sources */,
 				9664CAD6293280B7001D9B36 /* EatFruitViewController.swift in Sources */,
-				96127C1B293657A400C50512 /* Util.swift in Sources */,
 				96E96C55292D06A9007E9048 /* AppDelegate.swift in Sources */,
 				96E96C8A292D23E9007E9048 /* FruitManager.swift in Sources */,
 				961FEABD2933AA9600C623FA /* FruitLItem+CoreDataProperties.swift in Sources */,
 				96E96C87292D0B1B007E9048 /* FruitData.swift in Sources */,
 				96E96C8C292D33C5007E9048 /* FruitModel.swift in Sources */,
+				96127C2229368F6B00C50512 /* alertController.swift in Sources */,
 				96E96C57292D06A9007E9048 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,32 +12,26 @@ class GroupViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    // 1: var fruitData = [FruitModel]()
    var fruitManager = FruitManager()
-   // fetcher all data for å bruke den i collectionViewController.
-   var urlString = "https://www.fruityvice.com/api/fruit/all"
-    
-    
+ 
     var familyArray : [String] = []
     var genusArray : [String] = []
     var orderArray : [String] = []
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sorted Fruits"
         // som flexbox
         let layout = UICollectionViewFlowLayout()
-       // layout.itemSize = CGSize(width: 80, height: 100)
         collectionView.collectionViewLayout = layout
         
         // henter custom layouts
+        
         // celle
         collectionView.register(MyCollectionViewCell.nib(), forCellWithReuseIdentifier: "MyCollectionViewCell")
         // header
         collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
         
-    
         // tar på delegate ansvar
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -55,21 +49,12 @@ class GroupViewController: UIViewController {
         }
         genusArray = Array(genusSet)
         
-        
         var orderSet = Set<String>()
         for fruit in FruitManager.globalFruits {
             orderSet.insert(fruit.order)
         }
         orderArray = Array(orderSet)
-        
-        // fetch før global var
-        /* 1: fruitManager.fetchAllFruits(urlString: urlString) { result in
-             // print(result)
-             self.fruitData = result
-         
-         }*/
-
-   
+           
     }
     
 }
@@ -101,8 +86,6 @@ extension GroupViewController : UICollectionViewDelegate{
             // navigerer
             self.navigationController?.pushViewController(secondVc, animated: true)
         }
-        
-        
     }
 }
 
@@ -175,6 +158,7 @@ extension GroupViewController : UICollectionViewDataSource{
 // custom design
 extension GroupViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // to per rad
         return CGSize(width: collectionView.frame.width / 2.1 , height:80)
     }
 }

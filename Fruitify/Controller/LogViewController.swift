@@ -20,12 +20,15 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     private var fruits = [FruitLItem]()
     var dateSet : [String] = []
 
+    override func viewWillAppear(_ animated: Bool) {
+        getAllFruits()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let myFooterNib = UINib(nibName: "LogFooterView", bundle: nil)
         logTableView.register(myFooterNib, forHeaderFooterViewReuseIdentifier: "LogFooterView")
-        
-        getAllFruits()
+        // getAllFruits()
         logTableView.delegate = self
         logTableView.dataSource = self
         print(dateSet)
@@ -122,6 +125,12 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             
             var dbFruits = [FruitLItem]()
             dbFruits = try context.fetch(FruitLItem.fetchRequest())
+            if(dbFruits.isEmpty){
+                let alertCtr = AlertController(title: "Feilmelding", message: "Vi fant ingen data i loggen din")
+                DispatchQueue.main.async {
+                    self.present(alertCtr.displayAlert(),animated: true, completion: nil)
+                }
+            }
             fruits = dbFruits.sorted(by: {$0.date! < $1.date!})
             // bygger unikt set med datoer for sortering i tableview
             let dateFormatter = DateFormatter()
@@ -138,7 +147,7 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             }
         }
         catch {
-        // errror
+          
         }
     }
     
