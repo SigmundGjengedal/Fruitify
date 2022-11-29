@@ -10,8 +10,6 @@ import UIKit
 
 class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
-    // UITableViewDelegate,UITableViewDataSource
-    
     // dit vi går for å hente objekt
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -37,9 +35,7 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         var fruitsCount = 0
-        
         for fruit in fruits  {
             let stringDate = dateFormatter.string(from: fruit.date!)
             if(stringDate == dateSet[section]){
@@ -69,7 +65,6 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         let date = dateFormatter.date(from: dateSet[section])
         let weekDay = dateFormatter.weekdaySymbols[Calendar.current.component(.weekday, from: date!) - 1]
         return "\(weekDay) \(dateSet[section])"
@@ -116,13 +111,9 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
         return 50
     }
     
-    
-    
-    
-    // CRUD
+    // DB
     func getAllFruits(){
         do{
-            
             var dbFruits = [FruitLItem]()
             dbFruits = try context.fetch(FruitLItem.fetchRequest())
             if(dbFruits.isEmpty){
@@ -147,7 +138,7 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
             }
         }
         catch {
-          
+            print(error)
         }
     }
     
