@@ -131,13 +131,10 @@ class FruitsDetailsController: UIViewController {
     func getNumEatenFruitThisMonth() -> Int{
         do{
             var dbFruits = [FruitLItem]()
-            
             dbFruits = try context.fetch(FruitLItem.fetchRequest())
-            
             var matchedFruits = [FruitLItem]()
             let oneMonthAgo = Date(timeIntervalSinceNow: -30 * 60 * 60 * 24)
             matchedFruits = dbFruits.filter {$0.date! > oneMonthAgo}
-            //
             return matchedFruits.filter {$0.name == fruit?.name}.count
         }
         catch {
@@ -145,9 +142,6 @@ class FruitsDetailsController: UIViewController {
         }
         return 0
     }
-    
-    
-    
     
     @IBAction func eatPressed(_ sender: UIButton) {
         if let eatVC = storyboard?.instantiateViewController(withIdentifier: "EatFruitViewController") as? EatFruitViewController{

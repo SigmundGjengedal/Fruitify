@@ -174,11 +174,9 @@
 				96A034E82930F32A007A914D /* GroupViewController.swift */,
 				96A034EA2930F585007A914D /* LogViewController.swift */,
 				96A034F02931387D007A914D /* MyCollectionViewCell.swift */,
-				96A034F12931387D007A914D /* MyCollectionViewCell.xib */,
 				9664CAD32932453C001D9B36 /* HeaderCollectionReusableView.swift */,
 				9664CAD5293280B7001D9B36 /* EatFruitViewController.swift */,
 				96AE05D72934DB930014423F /* LogFooterView.swift */,
-				96AE05D92934DBBA0014423F /* LogFooterView.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +184,8 @@
 		96E96C85292D0AED007E9048 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				96A034F12931387D007A914D /* MyCollectionViewCell.xib */,
+				96AE05D92934DBBA0014423F /* LogFooterView.xib */,
 				96E96C5A292D06A9007E9048 /* Main.storyboard */,
 			);
 			path = View;
