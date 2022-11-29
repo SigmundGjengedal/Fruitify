@@ -215,9 +215,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pb-Bo-ycr">
-                                <rect key="frame" x="39" y="76" width="336" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Pb-Bo-ycr">
+                                <rect key="frame" x="39" y="46" width="336" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16L-43-3Je">
                                         <rect key="frame" x="20" y="191" width="175" height="21"/>
@@ -333,18 +332,13 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="Aov-KS-LoL"/>
+                                    <constraint firstAttribute="width" constant="336" id="Rye-cc-omk"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-ob-wcY">
-                                <rect key="frame" x="59" y="362" width="296" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B24-ov-oFo">
-                                <rect key="frame" x="104" y="499" width="207" height="35.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B24-ov-oFo">
+                                <rect key="frame" x="104" y="367" width="207" height="35.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Spis denne frukten" cornerStyle="medium">
                                     <backgroundConfiguration key="background">
@@ -357,9 +351,27 @@
                                     <action selector="eatPressed:" destination="cBX-iB-FwQ" eventType="touchUpInside" id="7Oa-Zu-PWd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-ob-wcY">
+                                <rect key="frame" x="39" y="296" width="336" height="24"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="336" id="nfk-W5-GVM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7SN-MA-TtE"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hJg-ob-wcY" firstAttribute="centerX" secondItem="8Pb-Bo-ycr" secondAttribute="centerX" id="QA2-Ox-Rlx"/>
+                            <constraint firstItem="8Pb-Bo-ycr" firstAttribute="top" secondItem="7SN-MA-TtE" secondAttribute="top" constant="2" id="UYR-Vs-gBm"/>
+                            <constraint firstItem="B24-ov-oFo" firstAttribute="centerX" secondItem="hJg-ob-wcY" secondAttribute="centerX" id="hYU-kw-xS1"/>
+                            <constraint firstItem="8Pb-Bo-ycr" firstAttribute="centerX" secondItem="7SN-MA-TtE" secondAttribute="centerX" id="j1K-r6-QLE"/>
+                            <constraint firstItem="hJg-ob-wcY" firstAttribute="top" secondItem="8Pb-Bo-ycr" secondAttribute="bottom" constant="10" id="m4g-gP-RW3"/>
+                            <constraint firstItem="B24-ov-oFo" firstAttribute="top" secondItem="hJg-ob-wcY" secondAttribute="bottom" constant="5" id="ycU-2v-be0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="OrderLabel" destination="exr-gu-DK6" id="IL1-hV-Ebj"/>
