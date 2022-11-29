@@ -19,6 +19,13 @@ class ListFruitsViewController: UIViewController {
     var fruitManager = FruitManager()
     
     override func viewWillAppear(_ animated: Bool) {
+
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "All Fruits"
+        // Do any additional setup after loading the view.
         setUrlString()
         fruitManager.fetchAllFruits(urlString: urlString!) {
             result in
@@ -36,12 +43,6 @@ class ListFruitsViewController: UIViewController {
                     }
                 }
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "All Fruits"
-        // Do any additional setup after loading the view.
    
     }
     
