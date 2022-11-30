@@ -54,7 +54,16 @@ class ListFruitsViewController: UIViewController {
                 case .success(let result):
                     if let res = result.1 as? HTTPURLResponse{
                         if res.statusCode != 200 {
-                            let alertCtr = AlertController(title: "Feilmelding", message:"feil på server,fikk ingen data")
+                            var alertMessage = ""
+                            switch res.statusCode {
+                                case 400...499:
+                                alertMessage = "Serveren finner ikke dataen du ber om. Code : \(res.statusCode) "
+                                case 500...599:
+                                    alertMessage = "Serveren er dessverrre nede. Code : \(res.statusCode)"
+                                default :
+                                    alertMessage = "Feil ved henting av data. Code : \(res.statusCode)"
+                            }
+                            let alertCtr = AlertController(title: "Feilmelding", message:alertMessage)
                             DispatchQueue.main.async {
                                 self.present(alertCtr.displayAlert(),animated: true, completion: nil)
                             }
