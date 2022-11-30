@@ -47,13 +47,13 @@ class FruitsDetailsController: UIViewController {
     
     @IBOutlet weak var replayButtonOutlet: UIButton!
     
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = fruit?.name
         
-       
-       
-        replayButtonOutlet.isHidden = true
+      
         familyLabel.text = "family"
         familyLabelValue.text = fruit?.family
         
@@ -78,8 +78,12 @@ class FruitsDetailsController: UIViewController {
         sugarLabel.text = "Sugar"
         sugarLabelValue.text = fruit?.sugarAsString
         
-     
-        
+        replayButtonOutlet.isHidden = true
+ 
+    }// end of didLoad
+    
+    // hva som skal vises
+    override func viewWillAppear(_ animated: Bool) {
         if let hasWarning = fruit?.showWarning{
             if(hasWarning){
                 sugarWarningLabel.text = "High sugar"
@@ -88,25 +92,28 @@ class FruitsDetailsController: UIViewController {
             }else {
                 sugarWarningLabel.text = "Low sugar"
                 sugarWarningLabel.backgroundColor = .green
-                
             }
         }
-        
-        // animasjons kall
-        if let fruit = fruit {
             numFruits =  getNumEatenFruitThisMonth()
+            if(numFruits>0){
+                replayButtonOutlet.isHidden = false
+            }
+        
+    }
+    // starter animasjon først når viewet vises
+    override func viewDidAppear(_ animated: Bool) {
+        if let fruit = fruit {
             if(numFruits>0){
                 let fruitEmojis : [String:String] = ["Apple" : "🍎", "Orange": "🍊",  "Lemon" :"🍋","Blueberry":"🫐","Cherry":"🍒","Pineapple" : "🍍", "Kiwi":"🥝", "Grapes":"🍇", "Banana":"🍌"]
                 
                 emoji = fruitEmojis[fruit.name] ?? "💯"
-                replayButtonOutlet.isHidden = false
+                
                 rainEatenFruits(with: emoji, count: numFruits)
                 
-                }
+            }
         }
-       
-       
-    }// end of didLoad
+    }
+ 
     
     
     @IBAction func replayPressed(_ sender: UIButton) {
@@ -133,7 +140,7 @@ class FruitsDetailsController: UIViewController {
             fruitLabel.font = fruitLabel.font.withSize(40)
             view.addSubview(fruitLabel)
             
-            UIView.animate(withDuration: 3.0, delay: 0.0, options:[.allowUserInteraction], animations: {
+            UIView.animate(withDuration: 2.0, delay: 0.0, options:[.allowUserInteraction], animations: {
                 fruitLabel.frame = CGRect(x: randomXPosition, y: 1000, width: 50, height: 50)
                 fruitLabel.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                 
