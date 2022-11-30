@@ -135,7 +135,7 @@ class FruitsDetailsController: UIViewController {
             
             UIView.animate(withDuration: 3.0, delay: 0.0, options:[.allowUserInteraction], animations: {
                 fruitLabel.frame = CGRect(x: randomXPosition, y: 1000, width: 50, height: 50)
-                fruitLabel.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                fruitLabel.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                 
             }, completion:nil)
         }

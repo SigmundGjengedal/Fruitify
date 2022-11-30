@@ -12,19 +12,31 @@ struct FruitManager {
         
     static var globalFruits = [FruitModel]()
     
-    func fetchAllFruits(urlString : String,completion: @escaping (Result<[FruitModel], Error>) -> Void){
+    func fetchAllFruits(urlString : String,completion: @escaping (Result< ([FruitModel]?,URLResponse), Error>) -> Void){
         let url = URL(string : urlString)
         let session = URLSession.shared
         let dataTask = session.dataTask(with: url!) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                   print("statusCode: \(httpResponse.statusCode)")
+              
+               }
             
             if let error = error {
                 completion(.failure(error))
                 return
             }
-            if let gotData = data {
-                if let parsingData = parseJSON(gotData){
-                    completion(.success(parsingData) )
-                }
+             if let gotData = data, let gotResponse = response as? HTTPURLResponse {
+                 if gotResponse.statusCode != 200 {
+                     print("fikk feil fra server")
+                     completion(.success((nil,gotResponse)))
+                    } else{
+                         if let parsingData = parseJSON(gotData){
+                             completion(.success((parsingData,gotResponse)))
+                         }
+                     }
+                   
+                 
             }
         }
         dataTask.resume()

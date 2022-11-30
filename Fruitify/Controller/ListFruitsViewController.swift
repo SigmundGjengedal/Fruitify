@@ -19,6 +19,10 @@ class ListFruitsViewController: UIViewController {
     var fruitManager = FruitManager()
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if FruitManager.globalFruits.isEmpty {
+            
+        }
 
     }
     
@@ -30,17 +34,28 @@ class ListFruitsViewController: UIViewController {
         fruitManager.fetchAllFruits(urlString: urlString!) {
             result in
                 switch result {
+                    
                 case .failure(let error):
-                    let alertCtr = AlertController(title: "Feilmelding", message: "Vi klarte ikke kontakte serveren vår, sjekk internett-tilkoblingen din.")
+                    let alertCtr = AlertController(title: "Feilmelding", message: error.localizedDescription)
                     DispatchQueue.main.async {
                         self.present(alertCtr.displayAlert(),animated: true, completion: nil)
                     }
-                    print(error)
+                
                 case .success(let result):
-                    self.fruitData = result
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                    if let res = result.1 as? HTTPURLResponse{
+                        if res.statusCode != 200 {
+                            let alertCtr = AlertController(title: "Feilmelding", message:"feil på server,fikk ingen data")
+                            DispatchQueue.main.async {
+                                self.present(alertCtr.displayAlert(),animated: true, completion: nil)
+                            }
+                        } else{
+                            self.fruitData = result.0!
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
                     }
+              
                 }
         }
    
@@ -49,7 +64,7 @@ class ListFruitsViewController: UIViewController {
     // metoder
     func setUrlString(){
         if(selectedFilter == nil && searchValue == nil){
-          urlString = "https://www.fruityvice.com/api/fruit/all"
+          urlString = "https://www.fruityvice.com/api/fruit/all/"
         }else {
             urlString = "https://www.fruityvice.com/api/fruit/\(selectedFilter!)/\(searchValue!)"
         }
