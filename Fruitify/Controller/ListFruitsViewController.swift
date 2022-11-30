@@ -102,7 +102,6 @@ extension ListFruitsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fruitData.count
     }
-    
     // hva  vi  skal  putte i hver  celle
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // allokerer minne ved å gjennbruke celler.

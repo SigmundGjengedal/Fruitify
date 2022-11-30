@@ -32,7 +32,7 @@ class EatFruitViewController: UIViewController {
     }
     
     @IBAction func canceelBtnPressed(_ sender: UIButton) {
-        // back to detail
+        // tilbake til detail
         self.navigationController?.popViewController(animated: true)
     }
     

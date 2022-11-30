@@ -21,18 +21,18 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     var dateSet : [String] = []
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getAllFruits()
+       
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         let myFooterNib = UINib(nibName: "LogFooterView", bundle: nil)
         logTableView.register(myFooterNib, forHeaderFooterViewReuseIdentifier: "LogFooterView")
-        // getAllFruits()
         logTableView.delegate = self
         logTableView.dataSource = self
-        print(dateSet)
-        dateFormatter.dateFormat = "dd/MM/yyyy"
     }
     
 

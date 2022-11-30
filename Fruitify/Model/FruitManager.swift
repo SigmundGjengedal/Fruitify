@@ -35,8 +35,6 @@ struct FruitManager {
                              completion(.success((parsingData,gotResponse)))
                          }
                      }
-                   
-                 
             }
         }
         dataTask.resume()
@@ -74,7 +72,6 @@ struct FruitManager {
                 processedFruit.append(fruitM)
             }
              FruitManager.globalFruits = processedFruit.sorted { $0.id < $1.id }
-            print(FruitManager.globalFruits)
              return processedFruit.sorted { $0.id < $1.id }
         } catch{
             print(error)
