@@ -19,18 +19,28 @@ class ListFruitsViewController: UIViewController {
     var fruitManager = FruitManager()
     
     override func viewWillAppear(_ animated: Bool) {
-        
         if FruitManager.globalFruits.isEmpty {
-            
+            fetchApiData()
         }
-
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "All Fruits"
-        // Do any additional setup after loading the view.
         setUrlString()
+        fetchApiData()
+    }
+    
+    // metoder
+    func setUrlString(){
+        if(selectedFilter == nil && searchValue == nil){
+          urlString = "https://www.fruityvice.com/api/fruit/all/"
+        }else {
+            urlString = "https://www.fruityvice.com/api/fruit/\(selectedFilter!)/\(searchValue!)"
+        }
+    }
+    
+    func fetchApiData(){
         fruitManager.fetchAllFruits(urlString: urlString!) {
             result in
                 switch result {
@@ -57,16 +67,6 @@ class ListFruitsViewController: UIViewController {
                     }
               
                 }
-        }
-   
-    }
-    
-    // metoder
-    func setUrlString(){
-        if(selectedFilter == nil && searchValue == nil){
-          urlString = "https://www.fruityvice.com/api/fruit/all/"
-        }else {
-            urlString = "https://www.fruityvice.com/api/fruit/\(selectedFilter!)/\(searchValue!)"
         }
     }
     
