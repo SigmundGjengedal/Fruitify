@@ -337,20 +337,39 @@
                                     <constraint firstAttribute="width" constant="336" id="Rye-cc-omk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B24-ov-oFo">
-                                <rect key="frame" x="104" y="367" width="207" height="35.5"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Spis denne frukten" cornerStyle="medium">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="tintColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="eatPressed:" destination="cBX-iB-FwQ" eventType="touchUpInside" id="7Oa-Zu-PWd"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bQ9-0n-5DO">
+                                <rect key="frame" x="53" y="502" width="308" height="35.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIu-GY-oRP">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="35.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="f4B-WZ-7vY"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Replay"/>
+                                        <connections>
+                                            <action selector="replayPressed:" destination="cBX-iB-FwQ" eventType="touchUpInside" id="CQQ-z8-XWB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B24-ov-oFo">
+                                        <rect key="frame" x="108" y="0.0" width="200" height="35.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="c6u-1r-Wbi"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Spis denne frukten" cornerStyle="medium">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="tintColor"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="eatPressed:" destination="cBX-iB-FwQ" eventType="touchUpInside" id="7Oa-Zu-PWd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJg-ob-wcY">
                                 <rect key="frame" x="39" y="278" width="336" height="24"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
@@ -361,26 +380,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIu-GY-oRP">
-                                <rect key="frame" x="148" y="433" width="95" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Replay"/>
-                                <connections>
-                                    <action selector="replayPressed:" destination="cBX-iB-FwQ" eventType="touchUpInside" id="CQQ-z8-XWB"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7SN-MA-TtE"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cIu-GY-oRP" firstAttribute="top" secondItem="7SN-MA-TtE" secondAttribute="top" constant="389" id="4B0-li-MoD"/>
                             <constraint firstItem="hJg-ob-wcY" firstAttribute="centerX" secondItem="8Pb-Bo-ycr" secondAttribute="centerX" id="QA2-Ox-Rlx"/>
+                            <constraint firstItem="7SN-MA-TtE" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bQ9-0n-5DO" secondAttribute="bottom" constant="5" id="RcS-8T-PmU"/>
+                            <constraint firstItem="bQ9-0n-5DO" firstAttribute="top" secondItem="hJg-ob-wcY" secondAttribute="bottom" priority="750" constant="200" id="STi-8M-jp4"/>
                             <constraint firstItem="8Pb-Bo-ycr" firstAttribute="top" secondItem="7SN-MA-TtE" secondAttribute="top" constant="2" id="UYR-Vs-gBm"/>
-                            <constraint firstItem="B24-ov-oFo" firstAttribute="centerX" secondItem="hJg-ob-wcY" secondAttribute="centerX" id="hYU-kw-xS1"/>
+                            <constraint firstItem="bQ9-0n-5DO" firstAttribute="centerX" secondItem="7SN-MA-TtE" secondAttribute="centerX" id="cGj-Vi-g09"/>
                             <constraint firstItem="8Pb-Bo-ycr" firstAttribute="centerX" secondItem="7SN-MA-TtE" secondAttribute="centerX" id="j1K-r6-QLE"/>
                             <constraint firstItem="hJg-ob-wcY" firstAttribute="top" secondItem="8Pb-Bo-ycr" secondAttribute="bottom" constant="2" id="m4g-gP-RW3"/>
-                            <constraint firstItem="cIu-GY-oRP" firstAttribute="leading" secondItem="7SN-MA-TtE" secondAttribute="leading" constant="148" id="qHR-r3-Zd9"/>
-                            <constraint firstItem="B24-ov-oFo" firstAttribute="top" secondItem="hJg-ob-wcY" secondAttribute="bottom" constant="8" id="ycU-2v-be0"/>
                         </constraints>
                     </view>
                     <connections>

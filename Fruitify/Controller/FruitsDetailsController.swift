@@ -99,8 +99,9 @@ class FruitsDetailsController: UIViewController {
                 let fruitEmojis : [String:String] = ["Apple" : "🍎", "Orange": "🍊",  "Lemon" :"🍋","Blueberry":"🫐","Cherry":"🍒","Pineapple" : "🍍", "Kiwi":"🥝", "Grapes":"🍇", "Banana":"🍌"]
                 
                 emoji = fruitEmojis[fruit.name] ?? "💯"
-                rainEatenFruits(with: emoji, count: numFruits)
                 replayButtonOutlet.isHidden = false
+                rainEatenFruits(with: emoji, count: numFruits)
+                
                 }
         }
        
