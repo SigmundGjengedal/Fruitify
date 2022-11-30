@@ -48,7 +48,6 @@ class FruitsDetailsController: UIViewController {
     @IBOutlet weak var replayButtonOutlet: UIButton!
     
   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = fruit?.name
@@ -105,9 +104,8 @@ class FruitsDetailsController: UIViewController {
         if let fruit = fruit {
             if(numFruits>0){
                 let fruitEmojis : [String:String] = ["Apple" : "🍎", "Orange": "🍊",  "Lemon" :"🍋","Blueberry":"🫐","Cherry":"🍒","Pineapple" : "🍍", "Kiwi":"🥝", "Grapes":"🍇", "Banana":"🍌"]
-                
+        
                 emoji = fruitEmojis[fruit.name] ?? "💯"
-                
                 rainEatenFruits(with: emoji, count: numFruits)
                 
             }

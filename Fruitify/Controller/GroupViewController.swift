@@ -36,24 +36,24 @@ class GroupViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        // bygger unike set for sortering
+        // bygger alfabetisk sorterte array fra unike set
         var familySet = Set<String>()
         for fruit in FruitManager.globalFruits {
             familySet.insert(fruit.family)
         }
-        familyArray = Array(familySet)
+        familyArray = Array(familySet).sorted{ $0 < $1 }
       
         var genusSet = Set<String>()
         for fruit in FruitManager.globalFruits {
             genusSet.insert(fruit.genus)
         }
-        genusArray = Array(genusSet)
+        genusArray = Array(genusSet).sorted{ $0 < $1 }
         
         var orderSet = Set<String>()
         for fruit in FruitManager.globalFruits {
             orderSet.insert(fruit.order)
         }
-        orderArray = Array(orderSet)
+        orderArray = Array(orderSet).sorted{ $0 < $1 }
            
     }
     

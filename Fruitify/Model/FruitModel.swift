@@ -32,7 +32,7 @@ struct FruitModel {
         String(format: "%.1f", fat)
     }
     var caloriesAsString : String {
-        String(format: "%.1f", calories)
+        String(calories)
     }
     var sugarAsString : String {
         String(format: "%.1f", sugar)

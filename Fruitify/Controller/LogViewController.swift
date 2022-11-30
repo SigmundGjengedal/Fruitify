@@ -10,6 +10,8 @@ import UIKit
 
 class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
     
+    var fruitBrain = FruitBrain()
+    
     // dit vi går for å hente objekt
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -74,12 +76,6 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: "LogFooterView") as! LogFooterView
         
-        var totalSugar : Double = 0.0
-        var totalProtein : Double = 0.0
-        var totalCarbs : Double = 0.0
-        var totalCal : Int = 0
-        var totalFat : Double = 0.0
-        
         var fruitsOnDate = [FruitLItem]()
         for fruit in fruits {
             let stringDbDate = dateFormatter.string(from: fruit.date!)
@@ -87,20 +83,14 @@ class LogViewController: UIViewController, UITableViewDelegate,UITableViewDataSo
                 fruitsOnDate.append(fruit)
             }
         }
-    
-        for fruit in fruitsOnDate {
-            totalSugar += fruit.sugar
-            totalProtein += fruit.protein
-            totalCarbs += fruit.carbohydrates
-            totalCal += Int(fruit.calories)
-            totalFat += fruit.fat
-        }
         
-        footer.sugarLabelValue.text = "sukker: \(String(format: "%.2f", totalSugar))"
-        footer.proteinLabelValue.text = "protein: \(String(format: "%.2f", totalProtein))"
-        footer.totalCarbsLabel.text = "Karbohydrater: \(String(format: "%.2f", totalCarbs))"
-        footer.totalCalVallueLabel.text = "Kalorier: \(totalCal)"
-        footer.totalFatValueLabel.text = "Fett: \(String(format: "%.2f", totalFat))"
+       let totals = fruitBrain.calculateTotalNutitions(fruits: fruitsOnDate)
+        
+        footer.sugarLabelValue.text = "sukker: \(String(format: "%.2f", totals.totalSugar))"
+        footer.proteinLabelValue.text = "protein: \(String(format: "%.2f", totals.totalProtein))"
+        footer.totalCarbsLabel.text = "Karbohydrater: \(String(format: "%.2f", totals.totalCarbs))"
+        footer.totalCalVallueLabel.text = "Kalorier: \(totals.totalCal)"
+        footer.totalFatValueLabel.text = "Fett: \(String(format: "%.2f", totals.totalFat))"
         return footer
     }
     

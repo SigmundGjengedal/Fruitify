@@ -17,7 +17,6 @@ class EatFruitViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // bare debug
     }
     
 
